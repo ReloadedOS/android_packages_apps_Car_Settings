@@ -48,6 +48,8 @@
     <string name="wifi_speed" msgid="1650692446731850781">"လိုင်းအမြန်နှုန်း"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"ကြိမ်နှုန်း"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"IP လိပ်စာ"</string>
+    <!-- no translation found for show_password (2074628020371139240) -->
+    <skip />
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"ညံ့သည်"</item>
@@ -91,6 +93,7 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"တွဲချိတ်ရန် တောင်းဆိုချက်"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g>နှင့် တွဲချိတ်ရန် တို့ပါ။"</string>
     <string name="bluetooth_error_title" msgid="2341600997536511742"></string>
+    <string name="language_settings" msgid="2079258598337245546">"ဘာသာစကားများ"</string>
     <string name="sound_settings" msgid="3072423952331872246">"အသံ"</string>
     <string name="ring_volume_title" msgid="3135241004980719442">"ဖုန်းမြည်သံ အတိုးအကျယ်"</string>
     <string name="navi_volume_title" msgid="946292066759195165">"လမ်းညွှန်မှု အသံ"</string>
@@ -145,6 +148,25 @@
     <string name="settings_license_activity_title" msgid="8499293744313077709">"ပြင်ပကုမ္ပဏီလိုင်စင်များ"</string>
     <string name="settings_license_activity_unavailable" msgid="6104592821991010350">"လိုင်စင်များကို ဖွင့်ရာတွင် ပြသနာရှိနေသည်။"</string>
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"ဖွင့်နေသည်…"</string>
+    <string name="reset_options_title" msgid="4388902952861833420">"ပြင်ဆင်သတ်မှတ်ရန် ရွေးစရာများ"</string>
+    <string name="reset_options_summary" msgid="5508201367420359293">"ကွန်ရက်၊ အက်ပ်များ (သို့) စက်ပစ္စည်း ပြင်ဆင်သတ်မှတ်ခြင်း"</string>
+    <string name="reset_network_title" msgid="5571672360042035188">"Wi-Fi၊ ဘလူးတုသ် ပြင်ဆင်သတ်မှတ်ပါ"</string>
+    <!-- no translation found for reset_network_desc (602381374544634925) -->
+    <skip />
+    <!-- no translation found for reset_network_items (560284503269666087) -->
+    <skip />
+    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
+    <skip />
+    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
+    <skip />
+    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
+    <skip />
+    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
+    <skip />
+    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
+    <skip />
+    <string name="reset_app_preferences_title" msgid="1358092641530920263">"အက်ပ်ဦးစားပေးများ ပြင်ဆင်သတ်မှတ်ပါ"</string>
+    <string name="master_clear_title" msgid="8515335233363214414">"ဒေတာအားလုံး ဖျက်ပါ (စက်ရုံထုတ်သတ်မှတ်ပါ)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"ရက်စွဲနှင့် အချိန်"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"ရက်စွဲနှင့် အချိန် သတ်မှတ်ခြင်း"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"ရက်စွဲ၊ အချိန်၊ စံတော်ချိန်နှင့် စနစ်များကို သတ်မှတ်ပါ"</string>
@@ -164,10 +186,29 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"စံတော်ချိန်အလိုက် စီရန်"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"ရက်စွဲ"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"အချိန်"</string>
+    <string name="user_admin" msgid="1535484812908584809">"စီမံခန့်ခွဲသူ"</string>
+    <string name="signed_in_admin_user" msgid="1267225622818673274">"စီမံခန့်ခွဲသူအဖြစ် ဝင်ထားသည်"</string>
+    <string name="grant_admin_privileges" msgid="931069208484384534">"\'စီမံခန့်ခွဲသူ\' ၏လုပ်ပိုင်ခွင့်များ ပေးအပ်ရန်"</string>
+    <string name="assign_admin_privileges" msgid="5984310883483215656">"\'စီမံခန့်ခွဲသူ\' အဖြစ်ပြောင်းရန်"</string>
+    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"အသုံးပြုသူသည် အခြား \'စီမံခန့်ခွဲသူများ\' အပါအဝင် အသုံးပြုသူများကို ဖျက်ခြင်းနှင့် စနစ်ကို ပြင်ဆင်သတ်မှတ်ခြင်း ပြုလုပ်နိုင်ပါမည်။"</string>
+    <string name="action_not_reversible_message" msgid="740401337875726973">"ဤလုပ်ရပ်ကို ပြန်ပြင်၍မရပါ။"</string>
+    <string name="confirm_assign_admin" msgid="8326579654857377888">"စီမံခန့်ခွဲသူအဖြစ် ပြောင်းရန်"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"အသုံးပြုသူ ထည့်ရန်"</string>
-    <string name="user_add_account_menu" msgid="6625351983590713721">"အကောင့်ထည့်ရန်"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"သုံးစွဲသူကို ဖျက်ရန်"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"အသုံးပြုသူ အသစ်"</string>
+    <string name="user_add_user_title" msgid="7458813670614932479">"အသုံးပြုသူအသစ် ထည့်မလား။"</string>
+    <string name="user_add_user_message_setup" msgid="6030901156040053106">"အသုံးပြုသူအသစ် ထည့်သည့်အခါ ထိုသူသည် မိမိ၏ နေရာကို စနစ်ထည့်သွင်းရပါမည်။"</string>
+    <string name="user_add_user_message_update" msgid="1528170913388932459">"မည်သူမဆို အသုံးပြုသူအားလုံးအတွက် အက်ပ်များကို အပ်ဒိတ်လုပ်နိုင်သည်။"</string>
+    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
+    <skip />
+    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
+    <!-- no translation found for add_user_error_title (3206300411663817038) -->
+    <skip />
+    <string name="user_delete_user_description" msgid="2300280525351142435">"သုံးစွဲသူကို ဖျက်ရန်"</string>
+    <string name="really_remove_user_title" msgid="4990029019291756762">"ဤသူကို ဖယ်ရှားလိုပါသလား။"</string>
+    <string name="really_remove_user_message" msgid="3828090902833944533">"အက်ပ်အားလုံးနှင့် ဒေတာများကို ဖျက်လိုက်ပါမည်။"</string>
+    <string name="remove_user_error_title" msgid="2038275458657689420">"အသုံးပြုသူကို ဖယ်ရှား၍ မရပါ။"</string>
+    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"ပယ်ရန်"</string>
+    <string name="remove_user_error_retry" msgid="8291692909396995093">"ထပ်စမ်းကြည့်ရန်"</string>
     <string name="user_guest" msgid="3465399481257448601">"ဧည့်သည်"</string>
     <string name="user_switch" msgid="6544839750534690781">"ပြောင်းရန်"</string>
     <string name="current_user_name" msgid="3813671533249316823">"သင် (%1$s)"</string>
@@ -175,8 +216,9 @@
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"စနစ်ထည့်သွင်းထားခြင်း မရှိပါ"</string>
     <string name="edit_user_name_title" msgid="6890782937520262478">"အသုံးပြုသူအမည် တည်းဖြတ်ခြင်း"</string>
     <string name="users_list_title" msgid="770764290290240909">"အသုံးပြုသူများ"</string>
-    <string name="accounts_settings_title" msgid="436190037084293471">"အကောင့်များ"</string>
     <string name="user_details_title" msgid="1104762783367701498">"အသုံးပြုသူ"</string>
+    <string name="accounts_settings_title" msgid="436190037084293471">"အကောင့်များ"</string>
+    <string name="user_add_account_menu" msgid="6625351983590713721">"အကောင့်ထည့်ရန်"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"အကောင့်များ ထည့်မထားပါ"</string>
     <string name="account_list_title" msgid="7631588514613843065">"<xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g> အတွက် အကောင့်များ"</string>
     <string name="account_details_title" msgid="7529571432258448573">"အကောင့်အချက်အလက်"</string>
@@ -187,15 +229,6 @@
     <string name="really_remove_account_title" msgid="3555164432587924900">"အကောင့်ကို ဖယ်ရှားမလား။"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"ဤအကောင့်ကို ဖယ်ရှားလိုက်ခြင်းဖြင့် စက်ပစ္စည်းထဲရှိ မက်ဆေ့ဂျ်၊ အဆက်အသွယ်နှင့် အခြားဒေတာများ အားလုံးကို ဖျက်လိုက်ပါမည်။"</string>
     <string name="remove_account_failed" msgid="7472511529086294087">"ဤပြောင်းလဲမှုကို သင့်စီမံခန့်ခွဲသူက ခွင့်မပြုပါ"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"ဤသူကို ဖယ်ရှားလိုပါသလား။"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"အက်ပ်အားလုံးနှင့် ဒေတာများကို ဖျက်လိုက်ပါမည်။"</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"အသုံးပြုသူကို ဖယ်ရှား၍ မရပါ။"</string>
-    <string name="remove_user_error_message" msgid="6803947507134323358">"ထပ်စမ်းလိုသလား။"</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"ပယ်ရန်"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"ထပ်စမ်းကြည့်ရန်"</string>
-    <string name="user_add_user_title" msgid="7458813670614932479">"အသုံးပြုသူအသစ် ထည့်မလား။"</string>
-    <string name="user_add_user_message_setup" msgid="6030901156040053106">"အသုံးပြုသူအသစ် ထည့်သည့်အခါ ထိုသူသည် မိမိ၏ နေရာကို စနစ်ထည့်သွင်းရပါမည်။"</string>
-    <string name="user_add_user_message_update" msgid="1528170913388932459">"မည်သူမဆို အသုံးပြုသူအားလုံးအတွက် အက်ပ်များကို အပ်ဒိတ်လုပ်နိုင်သည်။"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"လုံခြုံရေး"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"မျက်နှာပြင်လော့ခ်"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"မရှိ"</string>
@@ -211,7 +244,9 @@
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"ထပ်လုပ်ရန်"</string>
     <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"ကျော်ရန်"</string>
     <string name="set_screen_lock" msgid="5239317292691332780">"မျက်နှာပြင်လော့ခ်တစ်ခု သတ်မှတ်ခြင်း"</string>
+    <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"သင့် PIN နံပါတ် ရွေးချယ်ခြင်း"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"သင့်လော့ခ်ဖွင့်ပုံစံ ရွေးပါ"</string>
+    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"သင့်စကားဝှက် ရွေးချယ်ခြင်း"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"လက်ရှိ မျက်နှာပြင်လော့ခ်"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"လုံခြုံရေးအတွက် ပုံစံတစ်ခု သတ်မှတ်ပါ"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"ရှင်းရန်"</string>
@@ -244,7 +279,7 @@
     <string name="lockpassword_clear_label" msgid="6363680971025188064">"ရှင်းရန်"</string>
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"မလုပ်တော့"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"အတည်ပြုရန်"</string>
-    <string name="choose_lock_password_hints" msgid="1802962836351866087">"စကားဝှက်၌ စာ ၄−၈လုံး၊ ဂဏန်း ၁လုံး ပါရမည်"</string>
+    <string name="choose_lock_password_hints" msgid="3903696950202491593">"အနည်းဆုံး အက္ခရာ ၄ လုံး ရှိရမည်"</string>
     <string name="lockpassword_password_too_short" msgid="6681218025001328405">"အနည်းဆုံး အက္ခရာ <xliff:g id="COUNT">%d</xliff:g> လုံး ရှိရမည်"</string>
     <string name="lockpassword_pin_too_short" msgid="6363004004424904218">"ပင်နံပါတ်သည် အနည်းဆုံးဂဏန်း <xliff:g id="COUNT">%d</xliff:g> လုံးရှိရမည်"</string>
     <string name="lockpassword_password_too_long" msgid="7530214940279491291">"အက္ခရာ <xliff:g id="NUMBER">%d</xliff:g> လုံးထက် နည်းရပါမည်"</string>
@@ -253,7 +288,7 @@
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"စက်ပစ္စည်း၏ စီမံခန့်ခွဲသူသည် မကြာသေးမီက အသုံးပြုခဲ့သည့် ပင်နံပါတ်ကို သုံးခွင့်မပြုပါ"</string>
     <string name="lockpassword_pin_blacklisted_by_admin" msgid="7412709707800738442">"အသုံးပြုလေ့ရှိသော ပင်နံပါတ်များကို သင်၏ IT စီမံခန့်ခွဲသူက ပိတ်ထားသည်။ အခြား ပင်နံပါတ်တစ်ခုဖြင့် စမ်းကြည့်ပါ။"</string>
     <string name="lockpassword_illegal_character" msgid="1984970060523635618">"၎င်းတွင် မမှန်ကန်သည့် အက္ခရာများ ပါဝင်၍မရပါ။"</string>
-    <string name="lockpassword_invalid_password" msgid="4987689810161043367">"စကားဝှက် မမှန်ကန်ပါ၊ အက္ခရာ ၄−၈ လုံး၊ အနည်းဆုံး ဂဏန်း ၁ လုံး၊ စာလုံး ၁ လုံးရှိရမည်ဖြစ်ပြီး နေရာမခြားရပါ။"</string>
+    <string name="lockpassword_invalid_password" msgid="1690956113717418430">"စကားဝှက် မမှန်ပါ၊ အနည်းဆုံး အက္ခရာ ၄ လုံး ရှိရမည်။"</string>
     <plurals name="lockpassword_password_requires_letters" formatted="false" msgid="424616259312760303">
       <item quantity="other">အနည်းဆုံး စကားလုံး <xliff:g id="COUNT">%d</xliff:g> လုံးပါဝင်ရမည်</item>
       <item quantity="one">အနည်းဆုံး စကားလုံး ၁ လုံးပါဝင်ရမည်</item>
@@ -296,6 +331,5 @@
     <string name="suggestion_primary_button" msgid="6421115494714083020">"စနစ်ထည့်သွင်းမှု အပြီးသတ်ရန်"</string>
     <string name="suggestion_secondary_button" msgid="7075088546904464681">"ယခုမလုပ်ပါ"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"ကားမောင်းနေစဉ် ဝန်ဆောင်မှု မရနိုင်ပါ။"</string>
-    <!-- no translation found for add_user_restricted_while_driving (6384004350628271556) -->
-    <skip />
+    <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"ကားမောင်းနေစဉ် အသုံးပြုသူကို ထည့်၍မရပါ။"</string>
 </resources>

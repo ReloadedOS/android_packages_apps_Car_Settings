@@ -23,8 +23,9 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
 import com.android.car.settings.R;
 
@@ -61,6 +62,16 @@ public class UserIconProvider {
                 .create(res, scaledIcon.getBitmap());
         circleIcon.setCircular(true);
         return circleIcon;
+    }
+
+    /**
+     * Gets the default icon for guest user.
+     *
+     * @return Drawable representing the default guest icon.
+     */
+    public Drawable getDefaultGuestIcon(Context context) {
+        return UserIconProvider.scaleUserIcon(mCarUserManagerHelper.getGuestDefaultIcon(),
+                mCarUserManagerHelper, context);
     }
 
     /**

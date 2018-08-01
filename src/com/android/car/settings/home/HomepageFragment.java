@@ -11,14 +11,14 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License
+ * limitations under the License.
  */
 package com.android.car.settings.home;
 
 
-import static com.android.car.settings.home.ExtraSettingsLoader.DEVICE_CATEGORY;
-import static com.android.car.settings.home.ExtraSettingsLoader.PERSONAL_CATEGORY;
-import static com.android.car.settings.home.ExtraSettingsLoader.WIRELESS_CATEGORY;
+import static com.android.car.settings.common.ExtraSettingsLoader.DEVICE_CATEGORY;
+import static com.android.car.settings.common.ExtraSettingsLoader.PERSONAL_CATEGORY;
+import static com.android.car.settings.common.ExtraSettingsLoader.WIRELESS_CATEGORY;
 
 import android.bluetooth.BluetoothAdapter;
 import android.car.user.CarUserManagerHelper;
@@ -26,15 +26,18 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.drawable.Icon;
 import android.os.Bundle;
 
-import com.android.car.list.LaunchAppLineItem;
-import com.android.car.list.TypedPagedListAdapter;
+import androidx.car.widget.ListItem;
+import androidx.car.widget.ListItemProvider;
+import androidx.car.widget.TextListItem;
+
 import com.android.car.settings.R;
 import com.android.car.settings.accounts.AccountsListFragment;
 import com.android.car.settings.applications.ApplicationSettingsFragment;
-import com.android.car.settings.common.ListSettingsFragment;
+import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.ExtraSettingsLoader;
+import com.android.car.settings.common.ListItemSettingsFragment;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.datetime.DatetimeSettingsFragment;
 import com.android.car.settings.display.DisplaySettingsFragment;
@@ -42,20 +45,21 @@ import com.android.car.settings.security.SettingsScreenLockActivity;
 import com.android.car.settings.sound.SoundSettingsFragment;
 import com.android.car.settings.suggestions.SettingsSuggestionsController;
 import com.android.car.settings.system.SystemSettingsFragment;
+import com.android.car.settings.users.UserDetailsFragment;
 import com.android.car.settings.users.UsersListFragment;
 import com.android.car.settings.wifi.CarWifiManager;
 import com.android.car.settings.wifi.WifiUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Homepage for settings for car.
  */
-public class HomepageFragment extends ListSettingsFragment implements
-        CarWifiManager.Listener,
-        SettingsSuggestionsController.Listener {
+public class HomepageFragment extends ListItemSettingsFragment implements
+        CarWifiManager.Listener, SettingsSuggestionsController.Listener {
     private static final Logger LOG = new Logger(HomepageFragment.class);
 
     private SettingsSuggestionsController mSettingsSuggestionsController;
@@ -68,6 +72,7 @@ public class HomepageFragment extends ListSettingsFragment implements
     // change this assumption without updating the code in onSuggestionLoaded.
     private int mNumSettingsSuggestions;
 
+    private List<ListItem> mListItems;
     private final BroadcastReceiver mBtStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -81,9 +86,11 @@ public class HomepageFragment extends ListSettingsFragment implements
                         // TODO show a different status icon?
                     case BluetoothAdapter.STATE_OFF:
                         mBluetoothLineItem.onBluetoothStateChanged(false);
+                        refreshList();
                         break;
                     default:
                         mBluetoothLineItem.onBluetoothStateChanged(true);
+                        refreshList();
                 }
             }
         }
@@ -97,15 +104,15 @@ public class HomepageFragment extends ListSettingsFragment implements
      */
     public static HomepageFragment newInstance() {
         HomepageFragment homepageFragment = new HomepageFragment();
-        Bundle bundle = ListSettingsFragment.getBundle();
+        Bundle bundle = ListItemSettingsFragment.getBundle();
         bundle.putInt(EXTRA_TITLE_ID, R.string.settings_label);
         homepageFragment.setArguments(bundle);
         return homepageFragment;
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        LOG.v("onActivityCreated: " + savedInstanceState);
+    public void onAttach(Context context) {
+        super.onAttach(context);
         mSettingsSuggestionsController =
                 new SettingsSuggestionsController(
                         getContext(),
@@ -114,17 +121,15 @@ public class HomepageFragment extends ListSettingsFragment implements
         mCarWifiManager = new CarWifiManager(getContext(), /* listener= */ this);
         if (WifiUtil.isWifiAvailable(getContext())) {
             mWifiLineItem = new WifiLineItem(
-                    getContext(), mCarWifiManager, getFragmentController());
+                    getContext(), mCarWifiManager, getFragmentController(),
+                    /* listController= */ this);
         }
         mBluetoothLineItem = new BluetoothLineItem(getContext(), getFragmentController());
         mCarUserManagerHelper = new CarUserManagerHelper(getContext());
+        mListItems = getListItems();
 
         // reset the suggestion count.
         mNumSettingsSuggestions = 0;
-
-        // Call super after the wifiLineItem and BluetoothLineItem are setup, because
-        // those are needed in super.onCreate().
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override
@@ -160,11 +165,16 @@ public class HomepageFragment extends ListSettingsFragment implements
     }
 
     @Override
-    public ArrayList<TypedPagedListAdapter.LineItem> getLineItems() {
+    public ListItemProvider getItemProvider() {
+        return new ListItemProvider.ListProvider(mListItems);
+    }
+
+    private ArrayList<ListItem> getListItems() {
         ExtraSettingsLoader extraSettingsLoader = new ExtraSettingsLoader(getContext());
-        Map<String, Collection<TypedPagedListAdapter.LineItem>> extraSettings =
+        Map<String, Collection<ListItem>> extraSettings =
                 extraSettingsLoader.load();
-        ArrayList<TypedPagedListAdapter.LineItem> lineItems = new ArrayList<>();
+        ArrayList<ListItem> lineItems = new ArrayList<>();
+
         lineItems.add(new SimpleIconTransitionLineItem(
                 R.string.display_settings,
                 R.drawable.ic_settings_display,
@@ -203,11 +213,12 @@ public class HomepageFragment extends ListSettingsFragment implements
                 R.drawable.ic_user,
                 getContext(),
                 null,
-                UsersListFragment.newInstance(),
+                getUserManagementFragment(),
                 getFragmentController()));
 
         // Guest users can't set screen locks or add/remove accounts.
         if (!mCarUserManagerHelper.isCurrentProcessGuestUser()) {
+
             lineItems.add(new SimpleIconTransitionLineItem(
                     R.string.accounts_settings_title,
                     R.drawable.ic_account,
@@ -215,12 +226,15 @@ public class HomepageFragment extends ListSettingsFragment implements
                     null,
                     AccountsListFragment.newInstance(),
                     getFragmentController()));
-            lineItems.add(new LaunchAppLineItem(
-                    getString(R.string.security_settings_title),
-                    Icon.createWithResource(getContext(), R.drawable.ic_lock),
-                    getContext(),
-                    null,
-                    new Intent(getContext(), SettingsScreenLockActivity.class)));
+
+            TextListItem item = new TextListItem(getContext());
+            item.setTitle(getString(R.string.security_settings_title));
+            item.setPrimaryActionIcon(R.drawable.ic_lock, /* useLargeIcon= */ false);
+            item.setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */ false);
+            item.setOnClickListener(v -> startActivity(new Intent(
+                    getContext(), SettingsScreenLockActivity.class)));
+
+            lineItems.add(item);
         }
 
         lineItems.add(new SimpleIconTransitionLineItem(
@@ -236,19 +250,32 @@ public class HomepageFragment extends ListSettingsFragment implements
         return lineItems;
     }
 
-    @Override
-    public void onSuggestionsLoaded(ArrayList<TypedPagedListAdapter.LineItem> suggestions) {
-        LOG.v("onDeferredSuggestionsLoaded");
-        for (int index = 0; index < mNumSettingsSuggestions; index++) {
-            mPagedListAdapter.remove(0);
+    private BaseFragment getUserManagementFragment() {
+        if (mCarUserManagerHelper.isCurrentProcessAdminUser()) {
+            // Admins can see a full list of users in Settings.
+            LOG.v("getUserManagementFragment Creating UsersListFragment for admin user.");
+            return UsersListFragment.newInstance();
         }
+        // Non-admins can only manage themselves in Settings.
+        LOG.v("getUserManagementFragment Creating UserDetailsFragment for non-admin.");
+        return UserDetailsFragment.newInstance(mCarUserManagerHelper.getCurrentProcessUserId());
+    }
+
+    @Override
+    public void onSuggestionsLoaded(ArrayList<ListItem> suggestions) {
+        LOG.v("onDeferredSuggestionsLoaded");
+        // TODO: there's two loops here to remove and add suggestions, there are some room to
+        // improve the efficiency.
+        mListItems.subList(0, mNumSettingsSuggestions).clear();
         mNumSettingsSuggestions = suggestions.size();
-        mPagedListAdapter.addAll(0, suggestions);
+        mListItems.addAll(0, suggestions);
+        refreshList();
     }
 
     @Override
     public void onSuggestionDismissed(int adapterPosition) {
         LOG.v("onSuggestionDismissed adapterPosition " + adapterPosition);
-        mPagedListAdapter.remove(adapterPosition);
+        mListItems.remove(adapterPosition);
+        refreshList();
     }
 }

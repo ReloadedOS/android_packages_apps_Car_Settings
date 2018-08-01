@@ -48,6 +48,8 @@
     <string name="wifi_speed" msgid="1650692446731850781">"Verbindungsgeschwindigkeit"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"Frequenz"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"IP-Adresse"</string>
+    <!-- no translation found for show_password (2074628020371139240) -->
+    <skip />
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"Schwach"</item>
@@ -91,6 +93,7 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Kopplungsanfrage"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Zum Koppeln mit <xliff:g id="DEVICE_NAME">%1$s</xliff:g> tippen."</string>
     <string name="bluetooth_error_title" msgid="2341600997536511742"></string>
+    <string name="language_settings" msgid="2079258598337245546">"Sprachen"</string>
     <string name="sound_settings" msgid="3072423952331872246">"Ton"</string>
     <string name="ring_volume_title" msgid="3135241004980719442">"Klingeltonlautstärke"</string>
     <string name="navi_volume_title" msgid="946292066759195165">"Lautstärke für Navigation"</string>
@@ -145,6 +148,25 @@
     <string name="settings_license_activity_title" msgid="8499293744313077709">"Drittlizenzen"</string>
     <string name="settings_license_activity_unavailable" msgid="6104592821991010350">"Beim Laden der Lizenzen ist ein Problem aufgetreten."</string>
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"Wird geladen…"</string>
+    <string name="reset_options_title" msgid="4388902952861833420">"Optionen zum Zurücksetzen"</string>
+    <string name="reset_options_summary" msgid="5508201367420359293">"Netzwerk, Apps oder Gerät zurücksetzen"</string>
+    <string name="reset_network_title" msgid="5571672360042035188">"WLAN und Bluetooth zurücksetzen"</string>
+    <!-- no translation found for reset_network_desc (602381374544634925) -->
+    <skip />
+    <!-- no translation found for reset_network_items (560284503269666087) -->
+    <skip />
+    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
+    <skip />
+    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
+    <skip />
+    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
+    <skip />
+    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
+    <skip />
+    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
+    <skip />
+    <string name="reset_app_preferences_title" msgid="1358092641530920263">"App-Einstellungen zurücksetzen"</string>
+    <string name="master_clear_title" msgid="8515335233363214414">"Alle Daten löschen (Werkseinstellungen)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Datum &amp; Uhrzeit"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"Datum und Uhrzeit festlegen"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Datum, Uhrzeit, Zeitzone &amp; Formate festlegen"</string>
@@ -164,10 +186,29 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"Nach Zeitzone sortieren"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"Datum"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"Uhrzeit"</string>
+    <string name="user_admin" msgid="1535484812908584809">"Administrator"</string>
+    <string name="signed_in_admin_user" msgid="1267225622818673274">"Als Administrator angemeldet"</string>
+    <string name="grant_admin_privileges" msgid="931069208484384534">"Administrator-Berechtigungen erteilen"</string>
+    <string name="assign_admin_privileges" msgid="5984310883483215656">"Als Administrator festlegen"</string>
+    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"Der Nutzer kann dann andere Nutzer einschließlich anderer Administratoren löschen und das System auf die Werkseinstellungen zurücksetzen."</string>
+    <string name="action_not_reversible_message" msgid="740401337875726973">"Diese Aktion lässt sich nicht rückgängig machen."</string>
+    <string name="confirm_assign_admin" msgid="8326579654857377888">"Ja, als Administrator festlegen"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"Nutzer hinzufügen"</string>
-    <string name="user_add_account_menu" msgid="6625351983590713721">"Konto hinzufügen"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"Nutzer löschen"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Neuer Nutzer"</string>
+    <string name="user_add_user_title" msgid="7458813670614932479">"Neuen Nutzer hinzufügen?"</string>
+    <string name="user_add_user_message_setup" msgid="6030901156040053106">"Wenn du einen neuen Nutzer hinzufügst, muss dieser seinen Bereich einrichten."</string>
+    <string name="user_add_user_message_update" msgid="1528170913388932459">"Jeder Nutzer kann Apps für alle anderen Nutzer aktualisieren."</string>
+    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
+    <skip />
+    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
+    <!-- no translation found for add_user_error_title (3206300411663817038) -->
+    <skip />
+    <string name="user_delete_user_description" msgid="2300280525351142435">"Nutzer löschen"</string>
+    <string name="really_remove_user_title" msgid="4990029019291756762">"Diesen Nutzer entfernen?"</string>
+    <string name="really_remove_user_message" msgid="3828090902833944533">"Sämtliche Apps und Daten werden gelöscht."</string>
+    <string name="remove_user_error_title" msgid="2038275458657689420">"Entfernen von Nutzer fehlgeschlagen."</string>
+    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Schließen"</string>
+    <string name="remove_user_error_retry" msgid="8291692909396995093">"Wiederholen"</string>
     <string name="user_guest" msgid="3465399481257448601">"Gast"</string>
     <string name="user_switch" msgid="6544839750534690781">"Wechseln"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Du (%1$s)"</string>
@@ -175,8 +216,9 @@
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Nicht eingerichtet"</string>
     <string name="edit_user_name_title" msgid="6890782937520262478">"Nutzername bearbeiten"</string>
     <string name="users_list_title" msgid="770764290290240909">"Nutzer"</string>
-    <string name="accounts_settings_title" msgid="436190037084293471">"Konten"</string>
     <string name="user_details_title" msgid="1104762783367701498">"Nutzer"</string>
+    <string name="accounts_settings_title" msgid="436190037084293471">"Konten"</string>
+    <string name="user_add_account_menu" msgid="6625351983590713721">"Konto hinzufügen"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"Keine Konten hinzugefügt"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Konten für <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
     <string name="account_details_title" msgid="7529571432258448573">"Kontoinformationen"</string>
@@ -187,15 +229,6 @@
     <string name="really_remove_account_title" msgid="3555164432587924900">"Konto entfernen?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"Durch das Entfernen dieses Kontos werden alle zugehörigen Nachrichten, Kontakte und andere Daten vom Gerät gelöscht!"</string>
     <string name="remove_account_failed" msgid="7472511529086294087">"Dein Administrator lässt diese Änderung nicht zu"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"Diesen Nutzer entfernen?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"Sämtliche Apps und Daten werden gelöscht."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"Entfernen von Nutzer fehlgeschlagen."</string>
-    <string name="remove_user_error_message" msgid="6803947507134323358">"Wiederholen?"</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Schließen"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"Wiederholen"</string>
-    <string name="user_add_user_title" msgid="7458813670614932479">"Neuen Nutzer hinzufügen?"</string>
-    <string name="user_add_user_message_setup" msgid="6030901156040053106">"Wenn du einen neuen Nutzer hinzufügst, muss dieser seinen Bereich einrichten."</string>
-    <string name="user_add_user_message_update" msgid="1528170913388932459">"Jeder Nutzer kann Apps für alle anderen Nutzer aktualisieren."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Sicherheit"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Displaysperre"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Keine"</string>
@@ -211,7 +244,9 @@
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"Wiederholen"</string>
     <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Überspringen"</string>
     <string name="set_screen_lock" msgid="5239317292691332780">"Displaysperre einrichten"</string>
+    <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"PIN wählen"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Muster wählen"</string>
+    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"Passwort ändern"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"Aktuelle Displaysperre"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Richte zur Sicherheit ein Muster ein"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Löschen"</string>
@@ -244,7 +279,7 @@
     <string name="lockpassword_clear_label" msgid="6363680971025188064">"Löschen"</string>
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Abbrechen"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Bestätigen"</string>
-    <string name="choose_lock_password_hints" msgid="1802962836351866087">"Passwort muss 4–8 Zeichen und mindestens 1 Zahl enthalten"</string>
+    <string name="choose_lock_password_hints" msgid="3903696950202491593">"Muss mindestens 4 Zeichen haben"</string>
     <string name="lockpassword_password_too_short" msgid="6681218025001328405">"Passwort muss mindestens <xliff:g id="COUNT">%d</xliff:g> Zeichen haben"</string>
     <string name="lockpassword_pin_too_short" msgid="6363004004424904218">"PIN muss mindestens <xliff:g id="COUNT">%d</xliff:g> Ziffern haben"</string>
     <string name="lockpassword_password_too_long" msgid="7530214940279491291">"Passwort muss weniger als <xliff:g id="NUMBER">%d</xliff:g> Zeichen haben"</string>
@@ -253,7 +288,7 @@
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Der Geräteadministrator hat festgelegt, dass bereits verwendete PINs nicht noch einmal verwendet werden dürfen"</string>
     <string name="lockpassword_pin_blacklisted_by_admin" msgid="7412709707800738442">"Dein IT-Administrator hat die Verwendung allzu häufiger PINs blockiert. Versuch es mit einer anderen PIN."</string>
     <string name="lockpassword_illegal_character" msgid="1984970060523635618">"Ungültige Zeichen sind nicht zulässig."</string>
-    <string name="lockpassword_invalid_password" msgid="4987689810161043367">"Passwort ungültig. Es muss 4–8 Zeichen lang sein und mindestens eine Zahl und einen Buchstaben enthalten. Leerzeichen sind nicht zulässig."</string>
+    <string name="lockpassword_invalid_password" msgid="1690956113717418430">"Ungültiges Passwort – muss mindestens 4 Zeichen haben."</string>
     <plurals name="lockpassword_password_requires_letters" formatted="false" msgid="424616259312760303">
       <item quantity="other">Passwort muss mindestens <xliff:g id="COUNT">%d</xliff:g> Buchstaben enthalten</item>
       <item quantity="one">Passwort muss mindestens einen Buchstaben enthalten</item>
@@ -296,6 +331,5 @@
     <string name="suggestion_primary_button" msgid="6421115494714083020">"Einrichtung abschließen"</string>
     <string name="suggestion_secondary_button" msgid="7075088546904464681">"jetzt nicht"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"Funktion während der Fahrt nicht verfügbar."</string>
-    <!-- no translation found for add_user_restricted_while_driving (6384004350628271556) -->
-    <skip />
+    <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"Während der Fahrt kann kein Nutzer hinzugefügt werden."</string>
 </resources>

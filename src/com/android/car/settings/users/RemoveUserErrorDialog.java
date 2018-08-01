@@ -17,60 +17,22 @@
 package com.android.car.settings.users;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 
 import androidx.car.app.CarAlertDialog;
+import androidx.fragment.app.DialogFragment;
 
 import com.android.car.settings.R;
 
 /**
- * Dialog to inform that user deletion failed and offers to retry.
+ * Dialog to inform that user deletion failed.
  */
 public class RemoveUserErrorDialog extends DialogFragment {
-    private DialogInterface.OnClickListener mRemoveUserRetryListener = new OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            if (mListener != null && which == DialogInterface.BUTTON_POSITIVE) {
-                mListener.onRetryRemoveUser();
-            }
-            dialog.dismiss();
-        }
-    };
-
-    private RemoveUserErrorListener mListener;
-
-    /**
-     * Sets a listener for onRetryRemoveUser that will get called if user presses positive
-     * button.
-     *
-     * @param listener Instance of {@link RemoveUserErrorListener} to call when confirmed.
-     */
-    public void setRetryListener(@Nullable RemoveUserErrorListener listener) {
-        mListener = listener;
-    }
-
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new CarAlertDialog.Builder(getContext())
                 .setTitle(R.string.remove_user_error_title)
-                .setBody(R.string.remove_user_error_message)
-                .setPositiveButton(R.string.remove_user_error_retry, mRemoveUserRetryListener)
-                .setNegativeButton(R.string.remove_user_error_dismiss, null)
+                .setPositiveButton(android.R.string.ok, null)
                 .create();
-    }
-
-    /**
-     * Interface for listeners that want to receive a callback when user removal fails.
-     */
-    public interface RemoveUserErrorListener {
-
-        /**
-         * Method called only when user presses retry button.
-         */
-        void onRetryRemoveUser();
     }
 }

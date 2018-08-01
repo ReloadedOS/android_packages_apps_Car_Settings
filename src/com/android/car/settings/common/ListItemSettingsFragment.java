@@ -23,12 +23,12 @@ import androidx.car.widget.ListItemProvider;
 import androidx.car.widget.PagedListView;
 
 import com.android.car.settings.R;
+import com.android.car.settings.suggestions.SuggestionLineItem;
 
 /**
  * Settings page that only contain a list of items.
  * <p>
- * Uses support library ListItemAdapter, unlike ListSettingsFragment that uses the car-list
- * lists.
+ * Uses support library ListItemAdapter.
  */
 public abstract class ListItemSettingsFragment extends BaseFragment implements ListController {
     private ListItemAdapter mListAdapter;
@@ -47,6 +47,16 @@ public abstract class ListItemSettingsFragment extends BaseFragment implements L
         super.onActivityCreated(savedInstanceState);
 
         mListAdapter = new ListItemAdapter(getContext(), getItemProvider());
+        mListAdapter.registerListItemViewType(CustomListItemTypes.CHECK_BOX_VIEW_TYPE,
+                CheckBoxListItem.getViewLayoutId(), CheckBoxListItem::createViewHolder);
+        mListAdapter.registerListItemViewType(CustomListItemTypes.EDIT_TEXT_VIEW_TYPE,
+                EditTextListItem.getViewLayoutId(), EditTextListItem::createViewHolder);
+        mListAdapter.registerListItemViewType(CustomListItemTypes.PASSWORD_VIEW_TYPE,
+                PasswordListItem.getViewLayoutId(), PasswordListItem::createViewHolder);
+        mListAdapter.registerListItemViewType(CustomListItemTypes.SPINNER_VIEW_TYPE,
+                SpinnerListItem.getViewLayoutId(), SpinnerListItem::createViewHolder);
+        mListAdapter.registerListItemViewType(CustomListItemTypes.SUGGESTION_VIEW_TYPE,
+                SuggestionLineItem.getViewLayoutId(), SuggestionLineItem::createViewHolder);
 
         PagedListView listView = getView().findViewById(R.id.list);
         listView.setAdapter(mListAdapter);

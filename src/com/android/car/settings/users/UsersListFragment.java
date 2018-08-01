@@ -26,9 +26,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import androidx.annotation.NonNull;
 import androidx.car.widget.ListItemProvider;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.CarUxRestrictionsHelper;
 import com.android.car.settings.common.ListItemSettingsFragment;
 
 /**
@@ -50,6 +52,9 @@ public class UsersListFragment extends ListItemSettingsFragment
     private Button mAddUserButton;
 
     private AsyncTask mAddNewUserTask;
+    private float mOpacityDisabled;
+    private float mOpacityEnabled;
+    private boolean mRestricted;
 
     public static UsersListFragment newInstance() {
         UsersListFragment usersListFragment = new UsersListFragment();
@@ -62,6 +67,8 @@ public class UsersListFragment extends ListItemSettingsFragment
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+        mOpacityDisabled = getContext().getResources().getFloat(R.dimen.opacity_disabled);
+        mOpacityEnabled = getContext().getResources().getFloat(R.dimen.opacity_enabled);
         mCarUserManagerHelper = new CarUserManagerHelper(getContext());
         mItemProvider =
                 new UsersItemProvider(getContext(), this, mCarUserManagerHelper);
@@ -76,31 +83,29 @@ public class UsersListFragment extends ListItemSettingsFragment
         mProgressBar = getActivity().findViewById(R.id.progress_bar);
 
         mAddUserButton = (Button) getActivity().findViewById(R.id.action_button1);
+        mAddUserButton.setOnClickListener(v -> {
+            if (mRestricted) {
+                UsersListFragment.this.getFragmentController().showDOBlockingMessage();
+            } else {
+                handleAddUserClicked();
+            }
+        });
         if (mCarUserManagerHelper.isCurrentProcessDemoUser()) {
-            // If the user is a demo user, show a dialog asking if they want to exit retail/demo
-            // mode
             mAddUserButton.setText(R.string.exit_retail_button_text);
-            mAddUserButton.setOnClickListener(v -> {
-                ConfirmExitRetailModeDialog dialog = new ConfirmExitRetailModeDialog();
-                dialog.setConfirmExitRetailModeListener(this);
-                dialog.show(this);
-            });
         } else if (mCarUserManagerHelper.canCurrentProcessAddUsers()) {
-            // Only add the add user button if the current user is allowed to add a user.
             mAddUserButton.setText(R.string.user_add_user_menu);
-            mAddUserButton.setOnClickListener(v -> {
-                ConfirmCreateNewUserDialog dialog =
-                        new ConfirmCreateNewUserDialog();
-                dialog.setConfirmCreateNewUserListener(this);
-                dialog.show(this);
-            });
         }
     }
 
     @Override
+    public void onUxRestrictionChanged(@NonNull CarUxRestrictions carUxRestrictions) {
+        mRestricted = CarUxRestrictionsHelper.isNoSetup(carUxRestrictions);
+        mAddUserButton.setAlpha(mRestricted ? mOpacityDisabled : mOpacityEnabled);
+    }
+
+    @Override
     public void onCreateNewUserConfirmed() {
-        mAddUserButton.setEnabled(false);
-        mProgressBar.setVisibility(View.VISIBLE);
+        setAddUserEnabled(false);
         mAddNewUserTask =
                 new AddNewUserTask(mCarUserManagerHelper, /* addNewUserListener= */ this)
                         .execute(getContext().getString(R.string.user_new_user_name));
@@ -130,23 +135,18 @@ public class UsersListFragment extends ListItemSettingsFragment
             mAddNewUserTask.cancel(/* mayInterruptIfRunning= */ false);
         }
 
-        mCarUserManagerHelper.unregisterOnUsersUpdateListener();
+        mCarUserManagerHelper.unregisterOnUsersUpdateListener(this);
     }
 
     @Override
     public void onUsersUpdate() {
-        refreshListItems();
+        mItemProvider.refreshItems();
+        refreshList();
     }
 
     @Override
     public void onUserClicked(UserInfo userInfo) {
-        if (mCarUserManagerHelper.isForegroundUser(userInfo)) {
-            // If it's the foreground user, launch fragment that allows them to edit their name.
-            getFragmentController().launchFragment(EditUsernameFragment.newInstance(userInfo));
-        } else {
-            // If it's another user, launch fragment that displays their information
-            getFragmentController().launchFragment(UserDetailsFragment.newInstance(userInfo));
-        }
+        getFragmentController().launchFragment(UserDetailsFragment.newInstance(userInfo.id));
     }
 
     /**
@@ -167,14 +167,48 @@ public class UsersListFragment extends ListItemSettingsFragment
         return mItemProvider;
     }
 
-    private void refreshListItems() {
-        mItemProvider.refreshItems();
-        refreshList();
+    @Override
+    public void onUserAddedSuccess() {
+        setAddUserEnabled(true);
     }
 
     @Override
-    public void onUserAdded() {
-        mAddUserButton.setEnabled(true);
-        mProgressBar.setVisibility(View.GONE);
+    public void onUserAddedFailure() {
+        setAddUserEnabled(true);
+        // Display failure dialog.
+        AddUserErrorDialog dialog = new AddUserErrorDialog();
+        dialog.show(this);
+    }
+
+    private void setAddUserEnabled(boolean enabled) {
+        mAddUserButton.setEnabled(enabled);
+        mProgressBar.setVisibility(enabled ? View.VISIBLE : View.GONE);
+    }
+
+    private void handleAddUserClicked() {
+        // If the user is a demo user, show a dialog asking if they want to exit retail/demo
+        // mode
+        if (mCarUserManagerHelper.isCurrentProcessDemoUser()) {
+            ConfirmExitRetailModeDialog dialog = new ConfirmExitRetailModeDialog();
+            dialog.setConfirmExitRetailModeListener(this);
+            dialog.show(this);
+            return;
+        }
+
+        // If no more users can be added because the maximum allowed number is reached, let the user
+        // know.
+        if (mCarUserManagerHelper.isUserLimitReached()) {
+            MaxUsersLimitReachedDialog dialog = new MaxUsersLimitReachedDialog(
+                    mCarUserManagerHelper.getMaxSupportedRealUsers());
+            dialog.show(this);
+            return;
+        }
+
+        // Only add the add user button if the current user is allowed to add a user.
+        if (mCarUserManagerHelper.canCurrentProcessAddUsers()) {
+            ConfirmCreateNewUserDialog dialog = new ConfirmCreateNewUserDialog();
+            dialog.setConfirmCreateNewUserListener(this);
+            dialog.show(this);
+        }
     }
 }

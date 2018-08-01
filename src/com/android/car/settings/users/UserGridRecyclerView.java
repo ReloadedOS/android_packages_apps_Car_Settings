@@ -21,9 +21,6 @@ import android.content.Context;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +30,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.car.widget.PagedListView;
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
@@ -78,7 +78,7 @@ public class UserGridRecyclerView extends PagedListView implements
     @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mCarUserManagerHelper.unregisterOnUsersUpdateListener();
+        mCarUserManagerHelper.unregisterOnUsersUpdateListener(this);
         if (mAddNewUserTask != null) {
             mAddNewUserTask.cancel(/* mayInterruptIfRunning= */ false);
         }
@@ -266,13 +266,7 @@ public class UserGridRecyclerView extends PagedListView implements
                         mAddUserView = holder.mView;
                         mAddUserView.setEnabled(false);
 
-                        ConfirmCreateNewUserDialog dialog =
-                                new ConfirmCreateNewUserDialog();
-                        dialog.setConfirmCreateNewUserListener(this);
-                        dialog.setCancelCreateNewUserListener(this);
-                        if (mBaseFragment != null) {
-                            dialog.show(mBaseFragment);
-                        }
+                        handleAddUserClicked();
                     }
                     return;
                 }
@@ -290,6 +284,25 @@ public class UserGridRecyclerView extends PagedListView implements
          */
         public void setAddUserRestricted(boolean isAddUserRestricted) {
             mIsAddUserRestricted = isAddUserRestricted;
+        }
+
+        private void handleAddUserClicked() {
+            if (mCarUserManagerHelper.isUserLimitReached()) {
+                enableAddView();
+                // Display max user limit reached dialog.
+                MaxUsersLimitReachedDialog dialog = new MaxUsersLimitReachedDialog(
+                        mCarUserManagerHelper.getMaxSupportedRealUsers());
+                if (mBaseFragment != null) {
+                    dialog.show(mBaseFragment);
+                }
+            } else {
+                ConfirmCreateNewUserDialog dialog = new ConfirmCreateNewUserDialog();
+                dialog.setConfirmCreateNewUserListener(this);
+                dialog.setCancelCreateNewUserListener(this);
+                if (mBaseFragment != null) {
+                    dialog.show(mBaseFragment);
+                }
+            }
         }
 
         private Bitmap getUserRecordIcon(UserRecord userRecord) {
@@ -317,15 +330,21 @@ public class UserGridRecyclerView extends PagedListView implements
          */
         @Override
         public void onCreateNewUserCancelled() {
-            if (mAddUserView != null) {
-                mAddUserView.setEnabled(true);
-            }
+            enableAddView();
         }
 
         @Override
-        public void onUserAdded() {
-            if (mAddUserView != null) {
-                mAddUserView.setEnabled(true);
+        public void onUserAddedSuccess() {
+            enableAddView();
+        }
+
+        @Override
+        public void onUserAddedFailure() {
+            enableAddView();
+            // Display failure dialog.
+            AddUserErrorDialog dialog = new AddUserErrorDialog();
+            if (mBaseFragment != null) {
+                dialog.show(mBaseFragment);
             }
         }
 
@@ -350,6 +369,12 @@ public class UserGridRecyclerView extends PagedListView implements
                 mUserAvatarImageView = (ImageView) view.findViewById(R.id.user_avatar);
                 mUserNameTextView = (TextView) view.findViewById(R.id.user_name);
                 mFrame = (FrameLayout) view.findViewById(R.id.current_user_frame);
+            }
+        }
+
+        private void enableAddView() {
+            if (mAddUserView != null) {
+                mAddUserView.setEnabled(true);
             }
         }
     }

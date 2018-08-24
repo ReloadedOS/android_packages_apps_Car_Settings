@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="keywords_display_night_display" msgid="2922294576679769957">"អេក្រង់ពន្លឺតិច យប់ ពណ៌ព្រឿងៗ"</string>
     <string name="night_mode_tile_label" msgid="6603597795502131664">"មុខងារយប់"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi‑Fi"</string>
-    <string name="wifi_settings_summary" msgid="6095898149997291025">"រៀបចំ និង​គ្រប់គ្រង​ចំណុច​ចូល​ប្រើ​ដោយឥត​ខ្សែ"</string>
     <string name="wifi_starting" msgid="473253087503153167">"កំពុង​បើក Wi‑Fi…"</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"កំពុង​បិទ Wi‑Fi…"</string>
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"មិន​អាច​បំភ្លេច​បណ្ដាញ​បានទេ"</string>
@@ -48,8 +47,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"ល្បឿនត​ភ្ជាប់"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"ប្រេកង់"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"អាសយដ្ឋាន IP"</string>
-    <!-- no translation found for show_password (2074628020371139240) -->
-    <skip />
+    <string name="show_password" msgid="2074628020371139240">"បង្ហាញពាក្យសម្ងាត់"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"ខ្សោយ​"</item>
@@ -62,7 +60,6 @@
     <string name="bluetooth_settings" msgid="3878243366013638982">"ប៊្លូធូស"</string>
     <string name="bluetooth_disabled" msgid="4187409401590350572">"បានបិទប៊្លូធូស"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"ប៊្លូធូស"</string>
-    <string name="bluetooth_settings_summary" msgid="4023303473646769835">"គ្រប់គ្រង​ការ​តភ្ជាប់ កំណត់​ឈ្មោះ​ឧបករណ៍ និង​ការរកឃើញ"</string>
     <string name="bluetooth_talkback_computer" msgid="5223330129934365312">"កុំព្យូទ័រ"</string>
     <string name="bluetooth_talkback_headset" msgid="6155254514321149935">"កាស"</string>
     <string name="bluetooth_talkback_phone" msgid="8833977851215000426">"ទូរសព្ទ"</string>
@@ -142,7 +139,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"រក្សាសិទ្ធិ"</string>
     <string name="license_title" msgid="936705938435249965">"អាជ្ញាបណ្ណ"</string>
     <string name="terms_title" msgid="5201471373602628765">"លក្ខខណ្ឌ​"</string>
-    <string name="webview_license_title" msgid="2531829466541104826">"អាជ្ញាបណ្ណ System WebView"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"អាជ្ញាបណ្ណ System WebView"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"ផ្ទាំង​រូបភាព"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"ក្រុមហ៊ុន​ផ្ដល់​សេវារូបភាព​ផ្កាយរណប៖\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"អាជ្ញាបណ្ណភាគីទីបី"</string>
@@ -151,21 +148,19 @@
     <string name="reset_options_title" msgid="4388902952861833420">"ជម្រើស​កំណត់​ឡើងវិញ"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"ការកំណត់​បណ្តាញ កម្មវិធី ឬ​ឧបករណ៍​ឡើងវិញ"</string>
     <string name="reset_network_title" msgid="5571672360042035188">"កំណត់ Wi-Fi, ប៊្លូធូស​ឡើងវិញ"</string>
-    <!-- no translation found for reset_network_desc (602381374544634925) -->
-    <skip />
-    <!-- no translation found for reset_network_items (560284503269666087) -->
-    <skip />
-    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
-    <skip />
-    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
-    <skip />
-    <string name="reset_app_preferences_title" msgid="1358092641530920263">"កំណត់​ចំណូល​ចិត្ត​កម្មវិធី​ឡើងវិញ"</string>
+    <string name="reset_network_desc" msgid="602381374544634925">"សកម្មភាព​នេះ​នឹង​កំណត់​ការកំណត់​បណ្តាញ​ទាំងអស់​ឡើងវិញ រួម​ទាំង៖"</string>
+    <string name="reset_network_items" msgid="560284503269666087"><li>"Wi‑Fi"</li>\n<li>"ប៊្លូធូស"</li></string>
+    <string name="reset_network_button_text" msgid="8374174455632765033">"កំណត់ការកំណត់ឡើងវិញ"</string>
+    <string name="reset_network_confirm_title" msgid="5255502723840197663">"កំណត់ឡើងវិញ?"</string>
+    <string name="reset_network_confirm_desc" msgid="7721698076856330212">"កំណត់ការកំណត់បណ្តាញទាំងអស់ឡើងវិញ? អ្នកមិនអាចត្រឡប់សកម្មភាពនេះវិញបានទេ!"</string>
+    <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"កំណត់ការកំណត់ឡើងវិញ"</string>
+    <string name="reset_network_complete_toast" msgid="3804108209431416865">"បានកំណត់ការកំណត់បណ្តាញឡើងវិញ"</string>
+    <string name="reset_app_pref_title" msgid="5855420038951743992">"កំណត់​ចំណូល​ចិត្ត​កម្មវិធី​ឡើងវិញ"</string>
+    <string name="reset_app_pref_desc" msgid="3356451885960078577">"សកម្មភាព​នេះ​នឹង​កំណត់​ចំណូល​ចិត្ត​ទាំងអស់ឡើងវិញ​សម្រាប់៖"</string>
+    <string name="reset_app_pref_items" msgid="5546867272168895443"><li>"កម្មវិធី​ដែលបាន​បិទ"</li>\n<li>"ការ​ជូនដំណឹង​កម្មវិធី​ដែលបាន​បិទ"</li>\n<li>"កម្មវិធី​លំនាំដើម​សម្រាប់​សកម្មភាពផ្សេងៗ"</li>\n<li>"ការដាក់កំហិត​ទិន្នន័យ​ផ្ទៃ​ខាងក្រោយ​លើកម្មវិធីផ្សេងៗ"</li>\n<li>"ការដាក់កំហិត​លើ​ការអនុញ្ញាត​ទាំងឡាយ"</li></string>
+    <string name="reset_app_pref_desc_data" msgid="9069623832516883414">"អ្នក​នឹង​មិន​បាត់បង់​ទិន្នន័យ​កម្មវិធីណាមួយ​ឡើយ។"</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"កំណត់​កម្មវិធី​ឡើងវិញ"</string>
+    <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"បាន​កំណត់​ចំណូល​ចិត្ត​កម្មវិធីឡើង​វិញ​ហើយ"</string>
     <string name="master_clear_title" msgid="8515335233363214414">"លុប​ទិន្នន័យ​ទាំងអស់ (កំណត់ដូច​ដើម​ឡើងវិញ)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"កាលបរិច្ឆេទ និង​ម៉ោង"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"កំណត់​កាលបរិច្ឆេទ និង​ម៉ោង"</string>
@@ -198,11 +193,12 @@
     <string name="user_add_user_title" msgid="7458813670614932479">"បញ្ចូល​អ្នក​ប្រើប្រាស់​ថ្មី?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"នៅពេលដែល​អ្នក​បញ្ចូល​អ្នក​ប្រើប្រាស់​ថ្មី បុគ្គល​នោះ​ត្រូវតែ​រៀបចំ​ទំហំ​ផ្ទុក​របស់គេ។"</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"អ្នកប្រើប្រាស់​ណាក៏​អាច​ដំឡើង​ជំនាន់កម្មវិធី​សម្រាប់​អ្នក​ប្រើប្រាស់​ទាំងអស់​ផ្សេង​ទៀត​បាន​ដែរ។"</string>
-    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
-    <skip />
-    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
-    <!-- no translation found for add_user_error_title (3206300411663817038) -->
-    <skip />
+    <string name="user_limit_reached_title" msgid="8803355734556061238">"​បាន​ឈាន​ដល់ចំនួន​កំណត់អ្នកប្រើប្រាស់"</string>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
+      <item quantity="other">អ្នកអាចបញ្ចូល​អ្នក​ប្រើប្រាស់បាន​រហូតដល់ <xliff:g id="COUNT">%d</xliff:g> នាក់។</item>
+      <item quantity="one">អាច​បង្កើត​អ្នក​ប្រើប្រាស់​បាន​​តែម្នាក់ប៉ុណ្ណោះ។</item>
+    </plurals>
+    <string name="add_user_error_title" msgid="3206300411663817038">"មិន​អាច​បង្កើត​អ្នកប្រើប្រាស់​ថ្មី​បាន​ទេ"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"លុប​អ្នក​ប្រើប្រាស់"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"លុប​អ្នកប្រើប្រាស់​នេះ?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"កម្មវិធី និង​ទិន្នន័យ​ទាំងអស់​នឹង​ត្រូវ​បាន​លុប។"</string>
@@ -210,6 +206,7 @@
     <string name="remove_user_error_dismiss" msgid="4006591159426844335">"ច្រានចោល"</string>
     <string name="remove_user_error_retry" msgid="8291692909396995093">"ព្យាយាមម្ដងទៀត"</string>
     <string name="user_guest" msgid="3465399481257448601">"ភ្ញៀវ"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"ភ្ញៀវ"</string>
     <string name="user_switch" msgid="6544839750534690781">"ប្ដូរ"</string>
     <string name="current_user_name" msgid="3813671533249316823">"អ្នក (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"ឈ្មោះ"</string>
@@ -246,7 +243,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"កំណត់​ការចាក់​សោអេក្រង់"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"ជ្រើសរើសកូដ PIN របស់អ្នក"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"ជ្រើស​រើសលំនាំ​របស់​អ្នក"</string>
-    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"ជ្រើសរើស​ពាក្យសម្ងាត់​របស់អ្នក"</string>
+    <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"ជ្រើសរើស​ពាក្យ​សម្ងាត់​របស់​អ្នក"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"ការចាក់សោអេក្រង់បច្ចុប្បន្ន"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"ដើម្បីសុវត្ថិភាព សូមកំណត់លំនាំ"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"សម្អាត"</string>

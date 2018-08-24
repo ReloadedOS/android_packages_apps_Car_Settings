@@ -48,8 +48,8 @@ public class CarSettingsRobolectricTestRunner extends RobolectricTestRunner {
 
     static {
         AAR_VERSIONS = new HashMap<>();
-        AAR_VERSIONS.put("car", "1.0.0-alpha4");
-        AAR_VERSIONS.put("appcompat", "1.0.0-alpha1");
+        AAR_VERSIONS.put("car", "1.0.0-alpha5");
+        AAR_VERSIONS.put("appcompat", "1.1.0-alpha01");
         AAR_VERSIONS.put("constraintlayout", "1.1.2");
     }
 
@@ -113,6 +113,7 @@ public class CarSettingsRobolectricTestRunner extends RobolectricTestRunner {
 
                 paths.add(createResourcePath("file:packages/apps/Car/libs/car-stream-ui-lib/res "));
                 paths.add(createResourcePath("file:packages/apps/Car/libs/car-list/res"));
+                paths.add(createResourcePath("file:packages/apps/Car/libs/car-settings-lib/res"));
                 paths.add(createResourcePath("file:frameworks/base/packages/SettingsLib/res"));
                 paths.add(createResourcePath(
                         "file:frameworks/opt/setupwizard/library/gingerbread/res"));

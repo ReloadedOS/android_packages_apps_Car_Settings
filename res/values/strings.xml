@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,6 @@
     <!-- wifi settings--><skip />
     <!-- Used in the 1st-level settings screen to go to the 2nd-level settings screen  [CHAR LIMIT=20]-->
     <string name="wifi_settings">Wi\u2011Fi</string>
-    <!-- Summary text of the Wi-fi settings screen -->
-    <string name="wifi_settings_summary">Set up &amp; manage wireless access points</string>
     <!-- Summary text when turning Wi-Fi or bluetooth on -->
     <string name="wifi_starting">Turning Wi\u2011Fi on\u2026</string>
     <!-- Summary text when turning Wi-Fi or bluetooth off -->
@@ -77,7 +75,7 @@
     <string name="wifi_frequency">Frequency</string>
     <!-- Label for the IP address of the connection -->
     <string name="wifi_ip_address">IP address</string>
-    <!-- Text for show password LineItem -->
+    <!-- Text for show password ListItem -->
     <string name="show_password">Show password</string>
     <!-- Key for the tag to store UI info for access point -->
     <string name="access_point_tag_key">access_point_tag_key</string>
@@ -101,8 +99,6 @@
     <string name="bluetooth_disabled">Bluetooth disabled</string>
     <!--Wireless controls screen, settings title for the item to take you to the bluetooth settings screen -->
     <string name="bluetooth_settings_title">Bluetooth</string>
-    <!--Wireless controls screen, settings summary for the item tot ake you to the bluetooth settings screen -->
-    <string name="bluetooth_settings_summary">Manage connections, set device name &amp; discoverability</string>
 
     <!-- Message for telling the user the kind of BT device being displayed in list. -->
     <string name="bluetooth_talkback_computer">Computer</string>
@@ -284,7 +280,7 @@
     <string name="terms_title">Terms and conditions</string>
     <!-- Note: this may be replaced by a more-specific title of the activity that will get launched --> <skip />
     <!-- About phone settings screen, setting option name to see licensing info for WebView component. [CHAR LIMIT=35] -->
-    <string name="webview_license_title">System WebView License</string>
+    <string name="webview_license_title">System WebView licenses</string>
     <!-- About phone settings screen, setting option name to see wallpapers attributions -->
     <string name="wallpaper_attributions">Wallpapers</string>
     <!-- About phone settings screen, setting option name to see wallpapers attributions values -->
@@ -307,24 +303,34 @@
     <!-- Reset Network --><skip />
     <!-- Button title to reset Wi-Fi settings, bluetooth settings. [CHAR LIMIT=40] -->
     <string name="reset_network_title">Reset Wi-Fi, Bluetooth</string>
-    <!-- Message on screen after user selects reset network settings [CHAR LIMIT=NONE] -->
+    <!-- Message on screen after user selects reset network settings. [CHAR LIMIT=NONE] -->
     <string name="reset_network_desc">This will reset all network settings, including:</string>
-    <!-- List items on screen after user selects reset network settings [CHAR LIMIT=NONE] -->
+    <!-- List items on screen after user selects reset network settings. [CHAR LIMIT=NONE] -->
     <string name="reset_network_items"><li>Wi\u2011Fi</li>\n<li>Bluetooth</li></string>
-    <!-- Button on screen after user selects reset network settings [CHAR LIMIT=30] -->
+    <!-- Button on screen after user selects reset network settings. [CHAR LIMIT=30] -->
     <string name="reset_network_button_text">Reset settings</string>
-    <!-- Reset settings confirmation screen title [CHAR LIMIT=30] -->
+    <!-- Reset settings confirmation screen title. [CHAR LIMIT=30] -->
     <string name="reset_network_confirm_title">Reset?</string>
-    <!-- Message on screen after user selects Reset settings button [CHAR LIMIT=NONE] -->
+    <!-- Message on screen after user selects Reset settings button. [CHAR LIMIT=NONE] -->
     <string name="reset_network_confirm_desc">Reset all network settings? You can\u2019t undo this action!</string>
-    <!-- Button on screen after user selects Reset settings button [CHAR LIMIT=30] -->
+    <!-- Button on screen after user selects Reset settings button. [CHAR LIMIT=30] -->
     <string name="reset_network_confirm_button_text">Reset settings</string>
-    <!-- Reset settings complete toast text [CHAR LIMIT=75] -->
+    <!-- Reset settings complete toast text. [CHAR LIMIT=75] -->
     <string name="reset_network_complete_toast">Network settings have been reset</string>
 
     <!-- Reset apps --><skip />
     <!-- Button title to reset all of user's app preferences. [CHAR LIMIT=40] -->
-    <string name="reset_app_preferences_title">Reset app preferences</string>
+    <string name="reset_app_pref_title">Reset app preferences</string>
+    <!-- Message on screen after user selects reset app preferences. [CHAR LIMIT=NONE] -->
+    <string name="reset_app_pref_desc">This will reset all preferences for:</string>
+    <!-- List items on screen after user selects reset app preferences. [CHAR LIMIT=NONE] -->
+    <string name="reset_app_pref_items"><li>Disabled apps</li>\n<li>Disabled app notifications</li>\n<li>Default applications for actions</li>\n<li>Background data restrictions for apps</li>\n<li>Any permission restrictions</li></string>
+    <!-- Final message on screen after user selects reset app preferences. [CHAR LIMIT=NONE] -->
+    <string name="reset_app_pref_desc_data">You will not lose any app data.</string>
+    <!-- Button on screen after user selects reset app preferences. [CHAR LIMIT=30] -->
+    <string name="reset_app_pref_button_text">Reset apps</string>
+    <!-- Reset app preferences complete toast text. [CHAR LIMIT=75] -->
+    <string name="reset_app_pref_complete_toast">App preferences have been reset</string>
 
     <!-- Master Clear --><skip />
     <!-- Button title to factory data reset the entire device. The "(factory reset)" part is optional for translation. [CHAR LIMIT=40]-->
@@ -428,6 +434,8 @@
     <!-- User info -->
     <!-- Title for Guest user [CHAR LIMIT=35] -->
     <string name="user_guest">Guest</string>
+    <!-- Title for button for starting a new guest session [CHAR LIMIT=35] -->
+    <string name="start_guest_session">Guest</string>
     <!-- Description for icon to switch user [CHAR LIMIT=35] -->
     <string name="user_switch">Switch</string>
     <!-- Description for user name that is currently in use -->
@@ -505,7 +513,7 @@
     <!-- Title string shown in choose lock pattern [CHAR LIMIT=40] -->
     <string name="lockscreen_choose_your_pattern">Choose your pattern</string>
     <!-- Title string shown in choose lock password [CHAR LIMIT=40] -->
-    <string name="lockscreen_choose_your_password">Choose your passowrd</string>
+    <string name="lockscreen_choose_your_password">Choose your password</string>
     <!-- Subtitle indicating the current screen lock type (none/PIN/pattern/password) [CHAR LIMIT=40] -->
     <string name="current_screen_lock">Current screen lock</string>
     <!-- Message on first screen of choose pattern flow [CHAR LIMIT=40] -->

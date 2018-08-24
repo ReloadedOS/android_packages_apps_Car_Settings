@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="keywords_display_night_display" msgid="2922294576679769957">"కాంతివిహీన స్క్రీన్, రాత్రి, లేత రంగు"</string>
     <string name="night_mode_tile_label" msgid="6603597795502131664">"రాత్రి మోడ్"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi‑Fi"</string>
-    <string name="wifi_settings_summary" msgid="6095898149997291025">"వైర్‌లెస్ యాక్సెస్ స్థానాలను సెటప్ చేయండి &amp; నిర్వహించండి"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Wi‑Fiని ఆన్ చేస్తోంది…"</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"Wi‑Fiని ఆఫ్ చేస్తోంది…"</string>
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"నెట్‌వర్క్‌ను మర్చిపోవడంలో విఫలమైంది"</string>
@@ -48,8 +47,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"లింక్ వేగం"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"తరచుదనం"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"IP చిరునామా"</string>
-    <!-- no translation found for show_password (2074628020371139240) -->
-    <skip />
+    <string name="show_password" msgid="2074628020371139240">"పాస్‌వర్డ్‌ను చూపు"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"బాగాలేదు"</item>
@@ -62,7 +60,6 @@
     <string name="bluetooth_settings" msgid="3878243366013638982">"బ్లూటూత్"</string>
     <string name="bluetooth_disabled" msgid="4187409401590350572">"బ్లూటూత్ నిలిపివేయబడింది"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"బ్లూటూత్"</string>
-    <string name="bluetooth_settings_summary" msgid="4023303473646769835">"కనెక్షన్‌లను నిర్వహించండి, పరికరం పేరును &amp; శోధనలో కనుగొనబడే సామర్థ్యాన్ని సెట్ చేయండి"</string>
     <string name="bluetooth_talkback_computer" msgid="5223330129934365312">"కంప్యూటర్"</string>
     <string name="bluetooth_talkback_headset" msgid="6155254514321149935">"హెడ్‌సెట్"</string>
     <string name="bluetooth_talkback_phone" msgid="8833977851215000426">"ఫోన్"</string>
@@ -142,7 +139,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"కాపీరైట్"</string>
     <string name="license_title" msgid="936705938435249965">"లైసెన్స్"</string>
     <string name="terms_title" msgid="5201471373602628765">"నిబంధనలు మరియు షరతులు"</string>
-    <string name="webview_license_title" msgid="2531829466541104826">"సిస్టమ్ వెబ్ వీక్షణ లైసెన్స్"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"సిస్టమ్ వెబ్ వీక్షణ లైసెన్స్‌లg"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"వాల్‌పేపర్‌లు"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"ఉపగ్రహ చిత్రాల ప్రదాతలు:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"మూడవ పక్షం లైసెన్స్‌లు"</string>
@@ -151,21 +148,19 @@
     <string name="reset_options_title" msgid="4388902952861833420">"రీసెట్ ఎంపికలు"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"నెట్‌వర్క్, యాప్‌లు లేదా పరికరాన్ని రీసెట్ చేయి"</string>
     <string name="reset_network_title" msgid="5571672360042035188">"Wi-Fi, బ్లూటూత్‌ని రీసెట్ చేయి"</string>
-    <!-- no translation found for reset_network_desc (602381374544634925) -->
-    <skip />
-    <!-- no translation found for reset_network_items (560284503269666087) -->
-    <skip />
-    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
-    <skip />
-    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
-    <skip />
-    <string name="reset_app_preferences_title" msgid="1358092641530920263">"యాప్ ప్రాధాన్యతలను రీసెట్ చేయి"</string>
+    <string name="reset_network_desc" msgid="602381374544634925">"ఇది అన్ని నెట్‌వర్క్ సెట్టింగ్‌లను రీసెట్ చేస్తుంది, వీటితో సహా:"</string>
+    <string name="reset_network_items" msgid="560284503269666087"><li>"Wi‑Fi"</li>\n<li>"బ్లూటూత్"</li></string>
+    <string name="reset_network_button_text" msgid="8374174455632765033">"సెట్టింగ్‌లను రీసెట్ చేయి"</string>
+    <string name="reset_network_confirm_title" msgid="5255502723840197663">"రీసెట్ చేయాలా?"</string>
+    <string name="reset_network_confirm_desc" msgid="7721698076856330212">"అన్ని నెట్‌వర్క్ సెట్టింగ్‌లను రీసెట్ చేయాలా? మీరు ఈ చర్యను తిరిగి రద్దు చేయలేరు!"</string>
+    <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"సెట్టింగ్‌లను రీసెట్ చేయి"</string>
+    <string name="reset_network_complete_toast" msgid="3804108209431416865">"నెట్‌వర్క్ సెట్టింగ్‌లు రీసెట్ చేయబడ్డాయి"</string>
+    <string name="reset_app_pref_title" msgid="5855420038951743992">"యాప్ ప్రాధాన్యతలను రీసెట్ చేయి"</string>
+    <string name="reset_app_pref_desc" msgid="3356451885960078577">"దీని కోసం అన్ని ప్రాధాన్యతలను రీసెట్ చేస్తుంది:"</string>
+    <string name="reset_app_pref_items" msgid="5546867272168895443"><li>"నిలిపివేయబడిన యాప్‌లు"</li>\n<li>"నిలిపివేయబడిన యాప్ నోటిఫికేషన్‌లు"</li>\n<li>"చర్యల కోసం డిఫాల్ట్ యాప్‌లు"</li>\n<li>"యాప్‌ల కోసం నేపథ్య డేటా పరిమితులు"</li>\n<li>"ఏవైనా అనుమతి పరిమితులు"</li></string>
+    <string name="reset_app_pref_desc_data" msgid="9069623832516883414">"మీరు ఎలాంటి యాప్ డేటాను కోల్పోరు."</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"యాప్‌లను రీసెట్ చేయి"</string>
+    <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"యాప్ ప్రాధాన్యతలు రీసెట్ చేయబడ్డాయి"</string>
     <string name="master_clear_title" msgid="8515335233363214414">"మొత్తం డేటాను తొలగించు (ఫ్యాక్టరీ రీసెట్)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"తేదీ &amp; సమయం"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"తేదీ మరియు సమయాన్ని సెట్ చేయండి"</string>
@@ -188,26 +183,22 @@
     <string name="time_picker_title" msgid="7436045944320504639">"సమయం"</string>
     <string name="user_admin" msgid="1535484812908584809">"నిర్వాహకుడు"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"నిర్వాహకుడిగా సైన్ ఇన్ చేసారు"</string>
-    <!-- no translation found for grant_admin_privileges (931069208484384534) -->
-    <skip />
-    <!-- no translation found for assign_admin_privileges (5984310883483215656) -->
-    <skip />
-    <!-- no translation found for assign_admin_privileges_message (2568957340592800419) -->
-    <skip />
-    <!-- no translation found for action_not_reversible_message (740401337875726973) -->
-    <skip />
-    <!-- no translation found for confirm_assign_admin (8326579654857377888) -->
-    <skip />
+    <string name="grant_admin_privileges" msgid="931069208484384534">"నిర్వాహక అనుమతులను మంజూరు చేయి"</string>
+    <string name="assign_admin_privileges" msgid="5984310883483215656">"నిర్వాహకుడిగా చేయి"</string>
+    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"వినియోగదారు ఇతర నిర్వాహకులతో సహా వినియోగదారులను తొలగించగలరు మరియు సిస్టమ్‌ని ఫ్యాక్టరీ రీసెట్ చేయగలరు."</string>
+    <string name="action_not_reversible_message" msgid="740401337875726973">"ఈ చర్యను రద్దు చేయలేరు."</string>
+    <string name="confirm_assign_admin" msgid="8326579654857377888">"అవును, నిర్వాహకుడిగా చేయి"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"వినియోగదారుని జోడించు"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"కొత్త వినియోగదారు"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"కొత్త వినియోగదారుని జోడించాలా?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"మీరు కొత్త వినియోగదారును జోడించినప్పుడు, ఆ వ్యక్తి తన స్థలాన్ని సెటప్ చేసుకోవాలి."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"ఏ వినియోగదారు అయినా మిగతా అందరు వినియోగదారుల కోసం యాప్‌లను అప్‌డేట్ చేయవచ్చు."</string>
-    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
-    <skip />
-    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
-    <!-- no translation found for add_user_error_title (3206300411663817038) -->
-    <skip />
+    <string name="user_limit_reached_title" msgid="8803355734556061238">"వినియోగదారు పరిమితిని చేరుకున్నారు"</string>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
+      <item quantity="other">మీరు <xliff:g id="COUNT">%d</xliff:g> వినియోగదారుల వరకు జోడించవచ్చు.</item>
+      <item quantity="one">ఒక్క వినియోగదారుని మాత్రమే సృష్టించవచ్చు.</item>
+    </plurals>
+    <string name="add_user_error_title" msgid="3206300411663817038">"కొత్త వినియోగదారుని సృష్టించడంలో విఫలమైంది"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"వినియోగదారుని తొలగించు"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"ఈ వినియోగదారుని తీసేయాలా?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"అన్ని యాప్‌లు మరియు డేటా తొలగించబడతాయి."</string>
@@ -215,6 +206,7 @@
     <string name="remove_user_error_dismiss" msgid="4006591159426844335">"విస్మరించండి"</string>
     <string name="remove_user_error_retry" msgid="8291692909396995093">"మళ్లీ ప్రయత్నించండి"</string>
     <string name="user_guest" msgid="3465399481257448601">"అతిథి"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"అతిథి"</string>
     <string name="user_switch" msgid="6544839750534690781">"మార్చు"</string>
     <string name="current_user_name" msgid="3813671533249316823">"మీరు (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"పేరు"</string>
@@ -251,7 +243,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"స్క్రీన్ లాక్‌ను సెట్ చేయండి"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"మీ పిన్ ఎంచుకోండి"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"మీ నమూనాను ఎంచుకోండి"</string>
-    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"మీ పాస్‌వర్డ్‌ను ఎంచుకోండి"</string>
+    <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"మీ పాస్‌వర్డ్‌ను ఎంచుకోండి"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"ప్రస్తుత స్క్రీన్ లాక్"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"భద్రత కోసం, ఆకృతిని సెట్ చేయండి"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"తీసివేయి"</string>

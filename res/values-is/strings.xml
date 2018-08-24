@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="keywords_display_night_display" msgid="2922294576679769957">"myrkva skjá, nótt, litblær"</string>
     <string name="night_mode_tile_label" msgid="6603597795502131664">"Næturstilling"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi-Fi"</string>
-    <string name="wifi_settings_summary" msgid="6095898149997291025">"Setja upp og stjórna þráðlausum aðgangsstöðum"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Kveikir á Wi‑Fi…"</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"Slekkur á Wi‑Fi…"</string>
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"Ekki tókst að gleyma neti"</string>
@@ -48,8 +47,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"Hraði tengingar"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"Tíðni"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"IP-tala"</string>
-    <!-- no translation found for show_password (2074628020371139240) -->
-    <skip />
+    <string name="show_password" msgid="2074628020371139240">"Sýna aðgangsorð"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"Lélegt"</item>
@@ -62,7 +60,6 @@
     <string name="bluetooth_settings" msgid="3878243366013638982">"Bluetooth"</string>
     <string name="bluetooth_disabled" msgid="4187409401590350572">"Slökkt á Bluetooth"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
-    <string name="bluetooth_settings_summary" msgid="4023303473646769835">"Stjórna tengingum, stilla heiti tækisins og sýnileika"</string>
     <string name="bluetooth_talkback_computer" msgid="5223330129934365312">"Tölva"</string>
     <string name="bluetooth_talkback_headset" msgid="6155254514321149935">"Höfuðtól"</string>
     <string name="bluetooth_talkback_phone" msgid="8833977851215000426">"Sími"</string>
@@ -142,7 +139,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"Höfundarréttur"</string>
     <string name="license_title" msgid="936705938435249965">"Leyfi"</string>
     <string name="terms_title" msgid="5201471373602628765">"Skilmálar"</string>
-    <string name="webview_license_title" msgid="2531829466541104826">"Leyfi vefglugga í kerfi"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"WebView leyfi kerfis"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"Veggfóður"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"Gervihnattamyndir frá \n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"Leyfi þriðju aðila"</string>
@@ -151,21 +148,19 @@
     <string name="reset_options_title" msgid="4388902952861833420">"Valkostir endurstillingar"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Endurstilling netkerfis, forrita eða tækis"</string>
     <string name="reset_network_title" msgid="5571672360042035188">"Endurstilla Wi-Fi, Bluetooth"</string>
-    <!-- no translation found for reset_network_desc (602381374544634925) -->
-    <skip />
-    <!-- no translation found for reset_network_items (560284503269666087) -->
-    <skip />
-    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
-    <skip />
-    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
-    <skip />
-    <string name="reset_app_preferences_title" msgid="1358092641530920263">"Endurstilla stillingar forrita"</string>
+    <string name="reset_network_desc" msgid="602381374544634925">"Þetta mun endurstilla allar netstillingar, þar á meðal:"</string>
+    <string name="reset_network_items" msgid="560284503269666087"><li>"Wi‑Fi"</li>\n<li>"Bluetooth"</li></string>
+    <string name="reset_network_button_text" msgid="8374174455632765033">"Endurstilla stillingar"</string>
+    <string name="reset_network_confirm_title" msgid="5255502723840197663">"Endurstilla?"</string>
+    <string name="reset_network_confirm_desc" msgid="7721698076856330212">"Endurstilla allar netstillingar? Ekki er hægt að afturkalla þessa aðgerð!"</string>
+    <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"Endurstilla stillingar"</string>
+    <string name="reset_network_complete_toast" msgid="3804108209431416865">"Netstillingar voru endurstilltar"</string>
+    <string name="reset_app_pref_title" msgid="5855420038951743992">"Endurstilla stillingar forrita"</string>
+    <string name="reset_app_pref_desc" msgid="3356451885960078577">"Þetta endurstillir allar stillingar fyrir:"</string>
+    <string name="reset_app_pref_items" msgid="5546867272168895443"><li>"Óvirk forrit"</li>\n<li>"Óvirkar tilkynningar forrita"</li>\n<li>"Sjálfgefin forrit aðgerða"</li>\n<li>"Gagnatakmarkanir forrita í bakgrunni"</li>\n<li>"Takmarkanir á heimildum"</li></string>
+    <string name="reset_app_pref_desc_data" msgid="9069623832516883414">"Þú glatar engum fyrirliggjandi forritagögnum."</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Endurstilla forrit"</string>
+    <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"Stillingar forrita voru endurstilltar"</string>
     <string name="master_clear_title" msgid="8515335233363214414">"Eyða öllum gögnum (núllstilla)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Dagsetning og tími"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"Veldu dagsetningu og tíma"</string>
@@ -198,11 +193,12 @@
     <string name="user_add_user_title" msgid="7458813670614932479">"Bæta nýjum notanda við?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Þegar þú bætir nýjum notanda við þarf viðkomandi að setja upp sitt eigið svæði."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Allir notendur geta uppfært forrit fyrir alla aðra notendur."</string>
-    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
-    <skip />
-    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
-    <!-- no translation found for add_user_error_title (3206300411663817038) -->
-    <skip />
+    <string name="user_limit_reached_title" msgid="8803355734556061238">"Notandahámarki náð"</string>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
+      <item quantity="one">Þú getur bætt við allt að <xliff:g id="COUNT">%d</xliff:g> notanda.</item>
+      <item quantity="other">Þú getur bætt við allt að <xliff:g id="COUNT">%d</xliff:g> notendum.</item>
+    </plurals>
+    <string name="add_user_error_title" msgid="3206300411663817038">"Ekki tókst að búa til nýjan notanda"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"Eyða notanda"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"Fjarlægja þennan notanda?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"Öllum forritum og gögnum verður eytt."</string>
@@ -210,6 +206,7 @@
     <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Hunsa"</string>
     <string name="remove_user_error_retry" msgid="8291692909396995093">"Reyna aftur"</string>
     <string name="user_guest" msgid="3465399481257448601">"Gestur"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"Gestur"</string>
     <string name="user_switch" msgid="6544839750534690781">"Skipta"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Þú (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Nafn"</string>
@@ -246,7 +243,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"Setja upp skjálás"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Veldu þér PIN-númer"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Veldu þér mynstur"</string>
-    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"Veldu þér aðgangsorð"</string>
+    <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Veldu aðgangsorð"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"Núverandi skjálás"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Settu upp mynstur til að gæta fyllsta öryggis"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Hreinsa"</string>

@@ -16,14 +16,18 @@
 
 package com.android.car.settings.common;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
+import androidx.annotation.StringRes;
 import androidx.car.widget.ListItemAdapter;
 import androidx.car.widget.ListItemProvider;
 import androidx.car.widget.PagedListView;
+import androidx.car.widget.TextListItem;
 
 import com.android.car.settings.R;
-import com.android.car.settings.suggestions.SuggestionLineItem;
+import com.android.car.settings.suggestions.SuggestionListItem;
 
 /**
  * Settings page that only contain a list of items.
@@ -56,11 +60,12 @@ public abstract class ListItemSettingsFragment extends BaseFragment implements L
         mListAdapter.registerListItemViewType(CustomListItemTypes.SPINNER_VIEW_TYPE,
                 SpinnerListItem.getViewLayoutId(), SpinnerListItem::createViewHolder);
         mListAdapter.registerListItemViewType(CustomListItemTypes.SUGGESTION_VIEW_TYPE,
-                SuggestionLineItem.getViewLayoutId(), SuggestionLineItem::createViewHolder);
+                SuggestionListItem.getViewLayoutId(), SuggestionListItem::createViewHolder);
 
         PagedListView listView = getView().findViewById(R.id.list);
         listView.setAdapter(mListAdapter);
         listView.setDividerVisibilityManager(mListAdapter);
+        listView.setMaxPages(PagedListView.UNLIMITED_PAGES);
     }
 
     @Override
@@ -73,4 +78,14 @@ public abstract class ListItemSettingsFragment extends BaseFragment implements L
      * Gets ListItemProvider that should provide items to show up in the list.
      */
     public abstract ListItemProvider getItemProvider();
+
+    protected TextListItem createSimpleListItem(@StringRes int titleResId,
+            View.OnClickListener onClickListener) {
+        Context context = requireContext();
+        TextListItem item = new TextListItem(context);
+        item.setTitle(context.getString(titleResId));
+        item.setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */ false);
+        item.setOnClickListener(onClickListener);
+        return item;
+    }
 }

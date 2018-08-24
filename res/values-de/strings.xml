@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="keywords_display_night_display" msgid="2922294576679769957">"display dimmen, bildschirm dimmen, nacht, tönung"</string>
     <string name="night_mode_tile_label" msgid="6603597795502131664">"Nachtmodus"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"WLAN"</string>
-    <string name="wifi_settings_summary" msgid="6095898149997291025">"WLAN-Zugangspunkte festlegen &amp; verwalten"</string>
     <string name="wifi_starting" msgid="473253087503153167">"WLAN wird aktiviert…"</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"WLAN wird deaktiviert…"</string>
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"Netzwerk konnte nicht entfernt werden"</string>
@@ -48,8 +47,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"Verbindungsgeschwindigkeit"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"Frequenz"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"IP-Adresse"</string>
-    <!-- no translation found for show_password (2074628020371139240) -->
-    <skip />
+    <string name="show_password" msgid="2074628020371139240">"Passwort anzeigen"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"Schwach"</item>
@@ -62,7 +60,6 @@
     <string name="bluetooth_settings" msgid="3878243366013638982">"Bluetooth"</string>
     <string name="bluetooth_disabled" msgid="4187409401590350572">"Bluetooth deaktiviert"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
-    <string name="bluetooth_settings_summary" msgid="4023303473646769835">"Verbindungen, Gerätename &amp; Sichtbarkeit verwalten"</string>
     <string name="bluetooth_talkback_computer" msgid="5223330129934365312">"Computer"</string>
     <string name="bluetooth_talkback_headset" msgid="6155254514321149935">"Headset"</string>
     <string name="bluetooth_talkback_phone" msgid="8833977851215000426">"Smartphone"</string>
@@ -142,7 +139,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"Urheberrecht"</string>
     <string name="license_title" msgid="936705938435249965">"Lizenz"</string>
     <string name="terms_title" msgid="5201471373602628765">"Nutzungsbedingungen"</string>
-    <string name="webview_license_title" msgid="2531829466541104826">"System-WebView-Lizenz"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"System-WebView-Lizenzen"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"Hintergründe"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"Satellitenbilder bereitgestellt von:\n© 2014 CNES/Astrium, DigitalGlobe, Bluesky"</string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"Drittlizenzen"</string>
@@ -151,21 +148,19 @@
     <string name="reset_options_title" msgid="4388902952861833420">"Optionen zum Zurücksetzen"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Netzwerk, Apps oder Gerät zurücksetzen"</string>
     <string name="reset_network_title" msgid="5571672360042035188">"WLAN und Bluetooth zurücksetzen"</string>
-    <!-- no translation found for reset_network_desc (602381374544634925) -->
-    <skip />
-    <!-- no translation found for reset_network_items (560284503269666087) -->
-    <skip />
-    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
-    <skip />
-    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
-    <skip />
-    <string name="reset_app_preferences_title" msgid="1358092641530920263">"App-Einstellungen zurücksetzen"</string>
+    <string name="reset_network_desc" msgid="602381374544634925">"Hierdurch werden alle Netzwerkeinstellungen zurückgesetzt, einschließlich:"</string>
+    <string name="reset_network_items" msgid="560284503269666087"><li>"WLAN"</li>\n<li>"Bluetooth"</li></string>
+    <string name="reset_network_button_text" msgid="8374174455632765033">"Einstellungen zurücksetzen"</string>
+    <string name="reset_network_confirm_title" msgid="5255502723840197663">"Zurücksetzen?"</string>
+    <string name="reset_network_confirm_desc" msgid="7721698076856330212">"Alle Netzwerkeinstellungen zurücksetzen? Diese Aktion kann nicht rückgängig gemacht werden."</string>
+    <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"Einstellungen zurücksetzen"</string>
+    <string name="reset_network_complete_toast" msgid="3804108209431416865">"Die Netzwerkeinstellungen wurden zurückgesetzt"</string>
+    <string name="reset_app_pref_title" msgid="5855420038951743992">"App-Einstellungen zurücksetzen"</string>
+    <string name="reset_app_pref_desc" msgid="3356451885960078577">"Hierdurch werden alle Einstellungen für folgende App(s) zurückgesetzt:"</string>
+    <string name="reset_app_pref_items" msgid="5546867272168895443"><li>"Deaktivierte Apps"</li>\n<li>"Benachrichtigungen zu deaktivierten Apps"</li>\n<li>"Standardanwendungen für Aktionen"</li>\n<li>"Einschränkungen von Hintergrunddaten für Apps"</li>\n<li>"Alle Berechtigungseinschränkungen"</li></string>
+    <string name="reset_app_pref_desc_data" msgid="9069623832516883414">"Es gehen keine App-Daten verloren."</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Apps zurücksetzen"</string>
+    <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"App-Einstellungen wurden zurückgesetzt"</string>
     <string name="master_clear_title" msgid="8515335233363214414">"Alle Daten löschen (Werkseinstellungen)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Datum &amp; Uhrzeit"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"Datum und Uhrzeit festlegen"</string>
@@ -198,11 +193,12 @@
     <string name="user_add_user_title" msgid="7458813670614932479">"Neuen Nutzer hinzufügen?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Wenn du einen neuen Nutzer hinzufügst, muss dieser seinen Bereich einrichten."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Jeder Nutzer kann Apps für alle anderen Nutzer aktualisieren."</string>
-    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
-    <skip />
-    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
-    <!-- no translation found for add_user_error_title (3206300411663817038) -->
-    <skip />
+    <string name="user_limit_reached_title" msgid="8803355734556061238">"Nutzerlimit erreicht"</string>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
+      <item quantity="other">Du kannst bis zu <xliff:g id="COUNT">%d</xliff:g> Nutzer hinzufügen.</item>
+      <item quantity="one">Es kann nur ein Nutzer erstellt werden.</item>
+    </plurals>
+    <string name="add_user_error_title" msgid="3206300411663817038">"Nutzer konnte nicht erstellt werden"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"Nutzer löschen"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"Diesen Nutzer entfernen?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"Sämtliche Apps und Daten werden gelöscht."</string>
@@ -210,6 +206,7 @@
     <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Schließen"</string>
     <string name="remove_user_error_retry" msgid="8291692909396995093">"Wiederholen"</string>
     <string name="user_guest" msgid="3465399481257448601">"Gast"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"Gast"</string>
     <string name="user_switch" msgid="6544839750534690781">"Wechseln"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Du (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Name"</string>
@@ -246,7 +243,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"Displaysperre einrichten"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"PIN wählen"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Muster wählen"</string>
-    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"Passwort ändern"</string>
+    <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Passwort festlegen"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"Aktuelle Displaysperre"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Richte zur Sicherheit ein Muster ein"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Löschen"</string>

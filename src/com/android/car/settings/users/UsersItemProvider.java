@@ -69,7 +69,7 @@ class UsersItemProvider extends AbstractRefreshableListItemProvider  {
         mItems.add(createGuestItem());
     }
 
-    // Creates a line for a user, clicking on it leads to the user details page.
+    // Creates a list item for a user, clicking on it leads to the user details page.
     private ListItem createUserItem(UserInfo userInfo) {
         UserListItem item = new UserListItem(userInfo, mContext, mCarUserManagerHelper);
 
@@ -78,16 +78,13 @@ class UsersItemProvider extends AbstractRefreshableListItemProvider  {
         return item;
     }
 
-    // Creates a line for a guest session.
+    // Creates a list item for a guest session.
     private ListItem createGuestItem() {
         Drawable icon = mUserIconProvider.getDefaultGuestIcon(mContext);
 
         TextListItem item = new TextListItem(mContext);
-        item.setPrimaryActionIcon(icon, /* useLargeIcon= */ false);
+        item.setPrimaryActionIcon(icon, TextListItem.PRIMARY_ACTION_ICON_SIZE_SMALL);
         item.setTitle(mContext.getString(R.string.user_guest));
-
-        item.setOnClickListener(view -> mUserClickListener.onGuestClicked());
-        item.setSupplementalIcon(R.drawable.ic_chevron_right, false);
         return item;
     }
 
@@ -101,10 +98,5 @@ class UsersItemProvider extends AbstractRefreshableListItemProvider  {
          * @param userInfo User for which the click is registered.
          */
         void onUserClicked(UserInfo userInfo);
-
-        /**
-         * Invoked when guest is clicked.
-         */
-        void onGuestClicked();
     }
 }

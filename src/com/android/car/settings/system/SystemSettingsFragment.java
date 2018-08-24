@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2018 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,6 @@ public class SystemSettingsFragment extends ListItemSettingsFragment {
     private static final String ACTION_SYSTEM_UPDATE_SETTINGS =
             "android.settings.SYSTEM_UPDATE_SETTINGS";
 
-    private static final String ACTION_SETTING_VIEW_LICENSE =
-            "android.settings.WEBVIEW_LICENSE";
-
     private ListItemProvider mItemProvider;
 
     public static SystemSettingsFragment getInstance() {
@@ -73,15 +70,15 @@ public class SystemSettingsFragment extends ListItemSettingsFragment {
     }
 
     private ArrayList<ListItem> getListItems() {
-        ArrayList<ListItem> lineItems = new ArrayList<>();
+        ArrayList<ListItem> listItems = new ArrayList<>();
 
-        lineItems.add(createLanguageListItem());
-        lineItems.addAll(createSystemUpdateListItems());
-        lineItems.add(createAboutSystemListItem());
-        lineItems.add(createLegalInfoListItem());
-        lineItems.add(createResetOptionsListItem());
+        listItems.add(createLanguageListItem());
+        listItems.addAll(createSystemUpdateListItems());
+        listItems.add(createAboutSystemListItem());
+        listItems.add(createLegalInfoListItem());
+        listItems.add(createResetOptionsListItem());
 
-        return lineItems;
+        return listItems;
     }
 
     private TextListItem createLanguageListItem() {
@@ -91,7 +88,7 @@ public class SystemSettingsFragment extends ListItemSettingsFragment {
         Locale locale = LanguagePickerUtils.getConfiguredLocale();
         languageItem.setBody(LocaleHelper.getDisplayName(locale, locale, /* sentenceCase= */ true));
         languageItem.setPrimaryActionIcon(
-                R.drawable.ic_language, /* useLargeIcon= */ false);
+                R.drawable.ic_language, TextListItem.PRIMARY_ACTION_ICON_SIZE_SMALL);
         languageItem.setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */ false);
         languageItem.setOnClickListener(
                 v -> getFragmentController().launchFragment(LanguagePickerFragment.newInstance()));
@@ -135,11 +132,9 @@ public class SystemSettingsFragment extends ListItemSettingsFragment {
         legalInfoItem.setPrimaryActionIcon(
                 R.drawable.ic_settings_about, /* useLargeIcon= */ false);
         legalInfoItem.setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */ false);
-        legalInfoItem.setOnClickListener(v -> {
-            Intent intent = new Intent();
-            intent.setAction(ACTION_SETTING_VIEW_LICENSE);
-            context.startActivity(intent);
-        });
+        legalInfoItem.setOnClickListener(v ->
+                getFragmentController().launchFragment(LegalInformationFragment.newInstance())
+        );
         return legalInfoItem;
     }
 

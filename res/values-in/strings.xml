@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="keywords_display_night_display" msgid="2922294576679769957">"layar redup, malam, tint"</string>
     <string name="night_mode_tile_label" msgid="6603597795502131664">"Mode malam"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi-Fi"</string>
-    <string name="wifi_settings_summary" msgid="6095898149997291025">"Siapkan &amp; kelola titik akses nirkabel"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Mengaktifkan Wi-Fi..."</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"Menonaktifkan Wi-Fi..."</string>
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"Gagal melupakan jaringan"</string>
@@ -48,8 +47,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"Kecepatan link"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"Frekuensi"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"Alamat IP"</string>
-    <!-- no translation found for show_password (2074628020371139240) -->
-    <skip />
+    <string name="show_password" msgid="2074628020371139240">"Tampilkan sandi"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"Buruk"</item>
@@ -62,7 +60,6 @@
     <string name="bluetooth_settings" msgid="3878243366013638982">"Bluetooth"</string>
     <string name="bluetooth_disabled" msgid="4187409401590350572">"Bluetooth dinonaktifkan"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
-    <string name="bluetooth_settings_summary" msgid="4023303473646769835">"Mengelola sambungan, menyetel nama perangkat &amp; visibilitas"</string>
     <string name="bluetooth_talkback_computer" msgid="5223330129934365312">"Komputer"</string>
     <string name="bluetooth_talkback_headset" msgid="6155254514321149935">"Headset"</string>
     <string name="bluetooth_talkback_phone" msgid="8833977851215000426">"Ponsel"</string>
@@ -142,7 +139,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"Hak Cipta"</string>
     <string name="license_title" msgid="936705938435249965">"Lisensi"</string>
     <string name="terms_title" msgid="5201471373602628765">"Persyaratan dan ketentuan"</string>
-    <string name="webview_license_title" msgid="2531829466541104826">"Lisensi WebView Sistem"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"Lisensi WebView sistem"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"Wallpaper"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"Penyedia citra satelit:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"Lisensi pihak ketiga"</string>
@@ -151,21 +148,19 @@
     <string name="reset_options_title" msgid="4388902952861833420">"Opsi setel ulang"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Menyetel ulang jaringan, aplikasi, atau perangkat"</string>
     <string name="reset_network_title" msgid="5571672360042035188">"Setel ulang Wi-Fi, Bluetooth"</string>
-    <!-- no translation found for reset_network_desc (602381374544634925) -->
-    <skip />
-    <!-- no translation found for reset_network_items (560284503269666087) -->
-    <skip />
-    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
-    <skip />
-    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
-    <skip />
-    <string name="reset_app_preferences_title" msgid="1358092641530920263">"Setel ulang preferensi aplikasi"</string>
+    <string name="reset_network_desc" msgid="602381374544634925">"Tindakan ini akan menyetel ulang semua setelan jaringan, termasuk:"</string>
+    <string name="reset_network_items" msgid="560284503269666087"><li>"Wi‑Fi"</li>\n<li>"Bluetooth"</li></string>
+    <string name="reset_network_button_text" msgid="8374174455632765033">"Setel ulang setelan"</string>
+    <string name="reset_network_confirm_title" msgid="5255502723840197663">"Setel ulang?"</string>
+    <string name="reset_network_confirm_desc" msgid="7721698076856330212">"Setel ulang semua setelan jaringan? Tindakan ini tidak dapat diurungkan!"</string>
+    <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"Setel ulang setelan"</string>
+    <string name="reset_network_complete_toast" msgid="3804108209431416865">"Setelan jaringan telah disetel ulang"</string>
+    <string name="reset_app_pref_title" msgid="5855420038951743992">"Setel ulang preferensi aplikasi"</string>
+    <string name="reset_app_pref_desc" msgid="3356451885960078577">"Tindakan ini akan menyetel ulang semua preferensi untuk:"</string>
+    <string name="reset_app_pref_items" msgid="5546867272168895443"><li>"Aplikasi yang dinonaktifkan"</li>\n<li>"Notifikasi aplikasi yang dinonaktifkan"</li>\n<li>"Aplikasi default untuk tindakan"</li>\n<li>"Pembatasan data latar belakang untuk aplikasi"</li>\n<li>"Pembatasan izin apa pun"</li></string>
+    <string name="reset_app_pref_desc_data" msgid="9069623832516883414">"Anda tidak akan kehilangan data aplikasi apa pun."</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Setel ulang aplikasi"</string>
+    <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"Preferensi aplikasi telah disetel ulang"</string>
     <string name="master_clear_title" msgid="8515335233363214414">"Hapus semua (reset ke setelan pabrik)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Tanggal &amp; waktu"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"Setel tanggal dan waktu"</string>
@@ -188,26 +183,22 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Waktu"</string>
     <string name="user_admin" msgid="1535484812908584809">"Admin"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Sedang login admin"</string>
-    <!-- no translation found for grant_admin_privileges (931069208484384534) -->
-    <skip />
-    <!-- no translation found for assign_admin_privileges (5984310883483215656) -->
-    <skip />
-    <!-- no translation found for assign_admin_privileges_message (2568957340592800419) -->
-    <skip />
-    <!-- no translation found for action_not_reversible_message (740401337875726973) -->
-    <skip />
-    <!-- no translation found for confirm_assign_admin (8326579654857377888) -->
-    <skip />
+    <string name="grant_admin_privileges" msgid="931069208484384534">"Berikan izin Admin"</string>
+    <string name="assign_admin_privileges" msgid="5984310883483215656">"Jadikan Admin"</string>
+    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"Pengguna akan dapat menghapus pengguna, termasuk Admin lain, dan me-reset sistem ke setelan pabrik."</string>
+    <string name="action_not_reversible_message" msgid="740401337875726973">"Tindakan ini tidak dapat dibatalkan."</string>
+    <string name="confirm_assign_admin" msgid="8326579654857377888">"Ya, jadikan admin"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"Tambahkan pengguna"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Pengguna baru"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Tambahkan pengguna baru?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Saat Anda menambahkan pengguna baru, orang tersebut perlu menyiapkan ruang mereka sendiri."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Setiap pengguna dapat mengupdate aplikasi untuk semua pengguna lain."</string>
-    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
-    <skip />
-    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
-    <!-- no translation found for add_user_error_title (3206300411663817038) -->
-    <skip />
+    <string name="user_limit_reached_title" msgid="8803355734556061238">"Batas pengguna tercapai"</string>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
+      <item quantity="other">Anda dapat menambahkan hingga <xliff:g id="COUNT">%d</xliff:g> pengguna.</item>
+      <item quantity="one">Hanya dapat membuat 1 pengguna.</item>
+    </plurals>
+    <string name="add_user_error_title" msgid="3206300411663817038">"Gagal membuat pengguna baru"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"Menghapus pengguna"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"Hapus pengguna ini?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"Semua aplikasi dan data akan dihapus."</string>
@@ -215,6 +206,7 @@
     <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Tutup"</string>
     <string name="remove_user_error_retry" msgid="8291692909396995093">"Coba lagi"</string>
     <string name="user_guest" msgid="3465399481257448601">"Tamu"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"Tamu"</string>
     <string name="user_switch" msgid="6544839750534690781">"Ganti"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Anda (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Nama"</string>
@@ -251,7 +243,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"Setel kunci layar"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Pilih PIN Anda"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Pilih pola Anda"</string>
-    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"Pilih sandi Anda"</string>
+    <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Pilih sandi Anda"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"Kunci layar saat ini"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Untuk keamanan, setel pola"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Hapus"</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="keywords_display_night_display" msgid="2922294576679769957">"escurecer tela, noite, tingir"</string>
     <string name="night_mode_tile_label" msgid="6603597795502131664">"Modo noturno"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi-Fi"</string>
-    <string name="wifi_settings_summary" msgid="6095898149997291025">"Configurar e gerenciar pontos de acesso sem fio"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Ativando Wi-Fi..."</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"Desativando Wi-Fi..."</string>
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"Falha ao esquecer a rede"</string>
@@ -48,8 +47,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"Velocidade do link"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"Frequência"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"Endereço IP"</string>
-    <!-- no translation found for show_password (2074628020371139240) -->
-    <skip />
+    <string name="show_password" msgid="2074628020371139240">"Exibir senha"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"Fraca"</item>
@@ -62,7 +60,6 @@
     <string name="bluetooth_settings" msgid="3878243366013638982">"Bluetooth"</string>
     <string name="bluetooth_disabled" msgid="4187409401590350572">"Bluetooth desativado"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
-    <string name="bluetooth_settings_summary" msgid="4023303473646769835">"Gerenciar conexões, definir o nome e detecção do dispositivo"</string>
     <string name="bluetooth_talkback_computer" msgid="5223330129934365312">"Computador"</string>
     <string name="bluetooth_talkback_headset" msgid="6155254514321149935">"Fone de ouvido"</string>
     <string name="bluetooth_talkback_phone" msgid="8833977851215000426">"Telefone"</string>
@@ -142,7 +139,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"Direitos autorais"</string>
     <string name="license_title" msgid="936705938435249965">"Licença"</string>
     <string name="terms_title" msgid="5201471373602628765">"Termos e Condições"</string>
-    <string name="webview_license_title" msgid="2531829466541104826">"Licença do sistema Webview"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"Licenças do sistema WebView"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"Planos de fundo"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"Provedores de imagens via satélite:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"Licenças de terceiros"</string>
@@ -151,21 +148,19 @@
     <string name="reset_options_title" msgid="4388902952861833420">"Opções de redefinição"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Redefinição de rede, apps ou dispositivo"</string>
     <string name="reset_network_title" msgid="5571672360042035188">"Redefinir Wi-Fi, Bluetooth"</string>
-    <!-- no translation found for reset_network_desc (602381374544634925) -->
-    <skip />
-    <!-- no translation found for reset_network_items (560284503269666087) -->
-    <skip />
-    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
-    <skip />
-    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
-    <skip />
-    <string name="reset_app_preferences_title" msgid="1358092641530920263">"Redefinir preferências de apps"</string>
+    <string name="reset_network_desc" msgid="602381374544634925">"Isso redefinirá todas as configurações de rede, incluindo:"</string>
+    <string name="reset_network_items" msgid="560284503269666087"><li>"Wi‑Fi"</li>\n<li>"Bluetooth"</li></string>
+    <string name="reset_network_button_text" msgid="8374174455632765033">"Redefinir configurações"</string>
+    <string name="reset_network_confirm_title" msgid="5255502723840197663">"Redefinir?"</string>
+    <string name="reset_network_confirm_desc" msgid="7721698076856330212">"Redefinir todas as configurações de rede? Não é possível desfazer essa ação."</string>
+    <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"Redefinir configurações"</string>
+    <string name="reset_network_complete_toast" msgid="3804108209431416865">"As configurações de rede foram redefinidas"</string>
+    <string name="reset_app_pref_title" msgid="5855420038951743992">"Redefinir preferências de apps"</string>
+    <string name="reset_app_pref_desc" msgid="3356451885960078577">"Isso redefinirá todas as preferências para:"</string>
+    <string name="reset_app_pref_items" msgid="5546867272168895443"><li>"apps desativados;"</li>\n<li>"notificações de apps desativados;"</li>\n<li>"apps padrão para ações;"</li>\n<li>"restrições de dados em segundo plano para apps;"</li>\n<li>"qualquer restrição de permissão."</li></string>
+    <string name="reset_app_pref_desc_data" msgid="9069623832516883414">"Você não perderá nenhum dado do app."</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Redefinir apps"</string>
+    <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"As preferências do app foram redefinidas"</string>
     <string name="master_clear_title" msgid="8515335233363214414">"Limpar todos os dados"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Data e hora"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"Definir data e hora"</string>
@@ -198,11 +193,12 @@
     <string name="user_add_user_title" msgid="7458813670614932479">"Adicionar novo usuário?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Quando você adiciona um usuário novo, essa pessoa precisa configurar o espaço dela."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Qualquer usuário pode atualizar os apps para todos os demais."</string>
-    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
-    <skip />
-    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
-    <!-- no translation found for add_user_error_title (3206300411663817038) -->
-    <skip />
+    <string name="user_limit_reached_title" msgid="8803355734556061238">"Limite de usuários atingido"</string>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
+      <item quantity="one">É possível adicionar até <xliff:g id="COUNT">%d</xliff:g> usuário.</item>
+      <item quantity="other">É possível adicionar até <xliff:g id="COUNT">%d</xliff:g> usuários.</item>
+    </plurals>
+    <string name="add_user_error_title" msgid="3206300411663817038">"Falha ao criar um novo usuário"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"Excluir usuário"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"Remover este usuário?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"Todos os apps e dados serão excluídos."</string>
@@ -210,6 +206,7 @@
     <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Dispensar"</string>
     <string name="remove_user_error_retry" msgid="8291692909396995093">"Tentar novamente"</string>
     <string name="user_guest" msgid="3465399481257448601">"Convidado"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"Visitante"</string>
     <string name="user_switch" msgid="6544839750534690781">"Alternar"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Você (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Nome"</string>
@@ -246,7 +243,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"Definir bloqueio de tela"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Escolha seu PIN"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Escolha seu padrão"</string>
-    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"Escolha sua senha"</string>
+    <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Escolha sua senha"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"Bloqueio de tela atual"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Por segurança, defina um padrão"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Limpar"</string>

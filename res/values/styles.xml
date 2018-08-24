@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 The Android Open Source Project
+<!-- Copyright (C) 2018 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,13 +15,13 @@
 -->
 
 <resources>
-    <style name="LineItem">
+    <style name="ListItem">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/car_double_line_list_item_height</item>
         <item name="android:foreground">@drawable/car_list_item_background</item>
     </style>
 
-    <style name="LineItem.SingleLine" parent="LineItem">
+    <style name="ListItem.SingleLine" parent="ListItem">
         <item name="android:layout_height">@dimen/car_single_line_list_item_height</item>
     </style>
 
@@ -44,7 +44,7 @@
         <item name="WifiSignalColor">?android:attr/colorAccent</item>
         <item name="android:windowBackground">@color/car_card</item>
         <item name="android:windowAnimationStyle">@style/SettingAnimationStyle</item>
-        <item name="android:borderlessButtonStyle">@style/Widget.Car.Settings.ActionBar.Button.Borderless.Colored</item>
+        <item name="android:borderlessButtonStyle">@style/Widget.Car.Button.Borderless.Colored</item>
     </style>
 
     <style name="SettingAnimationStyle">
@@ -78,12 +78,6 @@
 
     <style name="SettingsListHeader" parent="TextAppearance.Car.Body2">
         <item name="android:textColor">@color/car_accent</item>
-    </style>
-
-    <style name="Widget.Car.Settings.ActionBar.Button.Borderless.Colored"
-           parent="Widget.Car.Button.Borderless.Colored">
-        <item name="android:minWidth">@dimen/car_button_min_width</item>
-        <item name="android:fontFamily">roboto-regular</item>
     </style>
 
     <style name="SetupWizardButton.Negative" parent="@style/SuwGlifButton.Secondary">

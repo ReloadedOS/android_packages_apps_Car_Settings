@@ -15,8 +15,15 @@
     limitations under the License.
 -->
 
+<!--
+    NOTE:
+    This layout mirrors confirm_lock_pin.xml with just the styling differences between
+    setup wizard and settings applied. Any changes to ids/components outside of styling needs to be
+    duplicated in that file or breakages will occur.
+-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -33,7 +40,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:columnCount="3"/>
+            android:columnCount="3"
+            app:keyTextColor="@color/car_body3_light"/>
     </FrameLayout>
 
     <!-- End side: pin entry field and messages -->
@@ -50,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/car_padding_5"
             android:gravity="center"
-            android:textAppearance="@style/TextAppearance.Car.Body1"
+            android:textAppearance="@style/TextAppearance.Car.Body1.Light"
             android:maxLines="1"
             android:inputType="textPassword"
             android:cursorVisible="false"
@@ -61,7 +69,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginBottom="@dimen/car_padding_2"
-            android:textAppearance="@style/TextAppearance.Car.Body1"
+            android:textAppearance="@style/TextAppearance.Car.Body1.Light"
             android:text="@string/lock_settings_enter_pin"/>
 
         <TextView
@@ -69,6 +77,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textAppearance="@style/TextAppearance.Car.Body2" />
+            android:textAppearance="@style/TextAppearance.Car.Body2.Light" />
     </LinearLayout>
 </LinearLayout>

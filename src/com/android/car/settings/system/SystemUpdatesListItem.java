@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2018 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import com.android.car.settings.R;
 
 
 /**
- * A LineItem that links to system update.
+ * A ListItem that links to system update.
  */
 class SystemUpdatesListItem extends TextListItem {
     private final Context mContext;
@@ -40,7 +40,8 @@ class SystemUpdatesListItem extends TextListItem {
         mContext = context;
         mSettingsIntent = settingsIntent;
         setTitle(context.getString(R.string.system_update_settings_list_item_title));
-        setPrimaryActionIcon(R.drawable.ic_system_update, /*useLargeIcon=*/ false);
+        setPrimaryActionIcon(R.drawable.ic_system_update,
+                TextListItem.PRIMARY_ACTION_ICON_SIZE_SMALL);
         setSupplementalIcon(R.drawable.ic_chevron_right, /*showDivider=*/ false);
         setOnClickListener(this::onClick);
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="keywords_display_night_display" msgid="2922294576679769957">"scherm dimmen, nacht, tint"</string>
     <string name="night_mode_tile_label" msgid="6603597795502131664">"Nachtmodus"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wifi"</string>
-    <string name="wifi_settings_summary" msgid="6095898149997291025">"Draadloze toegangspunten instellen en beheren"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Wifi inschakelen…"</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"Wifi uitschakelen…"</string>
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"Vergeten van netwerk is mislukt"</string>
@@ -48,8 +47,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"Linksnelheid"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"Frequentie"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"IP-adres"</string>
-    <!-- no translation found for show_password (2074628020371139240) -->
-    <skip />
+    <string name="show_password" msgid="2074628020371139240">"Wachtwoord weergeven"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"Slecht"</item>
@@ -62,7 +60,6 @@
     <string name="bluetooth_settings" msgid="3878243366013638982">"Bluetooth"</string>
     <string name="bluetooth_disabled" msgid="4187409401590350572">"Bluetooth uitgeschakeld"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
-    <string name="bluetooth_settings_summary" msgid="4023303473646769835">"Verbindingen beheren, apparaatnaam en vindbaarheid instellen"</string>
     <string name="bluetooth_talkback_computer" msgid="5223330129934365312">"Computer"</string>
     <string name="bluetooth_talkback_headset" msgid="6155254514321149935">"Headset"</string>
     <string name="bluetooth_talkback_phone" msgid="8833977851215000426">"Telefoon"</string>
@@ -85,7 +82,7 @@
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"Pincode bevat letters of symbolen"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"Typ de koppelingscode en druk op Return of Enter"</string>
     <string name="bluetooth_pairing_request" msgid="4769675459526556801">"Koppelen met <xliff:g id="DEVICE_NAME">%1$s</xliff:g>?"</string>
-    <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"Toestaan dat <xliff:g id="DEVICE_NAME">%1$s</xliff:g> toegang heeft tot je contacten en oproepgeschiedenis"</string>
+    <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"Toestaan dat <xliff:g id="DEVICE_NAME">%1$s</xliff:g> toegang heeft tot je contacten en gespreksgeschiedenis"</string>
     <string name="bluetooth_enter_pin_other_device" msgid="7825091249522704764">"U moet deze pincode wellicht ook opgeven op het andere apparaat."</string>
     <string name="bluetooth_enter_passkey_other_device" msgid="7147248221018865922">"U moet deze toegangscode wellicht ook opgeven op het andere apparaat."</string>
     <string name="bluetooth_pin_values_hint_16_digits" msgid="418776900816984778">"Moet 16 cijfers zijn"</string>
@@ -142,7 +139,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"Copyright"</string>
     <string name="license_title" msgid="936705938435249965">"Licentie"</string>
     <string name="terms_title" msgid="5201471373602628765">"Algemene voorwaarden"</string>
-    <string name="webview_license_title" msgid="2531829466541104826">"Systeemlicentie voor webweergave"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"Systeemlicenties voor WebView"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"Achtergronden"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"Providers van satellietbeelden:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"Licenties van derden"</string>
@@ -151,21 +148,19 @@
     <string name="reset_options_title" msgid="4388902952861833420">"Opties voor resetten"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Netwerk, apps of apparaat resetten"</string>
     <string name="reset_network_title" msgid="5571672360042035188">"Wifi en Bluetooth resetten"</string>
-    <!-- no translation found for reset_network_desc (602381374544634925) -->
-    <skip />
-    <!-- no translation found for reset_network_items (560284503269666087) -->
-    <skip />
-    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
-    <skip />
-    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
-    <skip />
-    <string name="reset_app_preferences_title" msgid="1358092641530920263">"App-voorkeuren resetten"</string>
+    <string name="reset_network_desc" msgid="602381374544634925">"Hiermee worden alle netwerkinstellingen gereset, waaronder:"</string>
+    <string name="reset_network_items" msgid="560284503269666087"><li>"Wifi"</li>\n<li>"Bluetooth"</li></string>
+    <string name="reset_network_button_text" msgid="8374174455632765033">"Instellingen resetten"</string>
+    <string name="reset_network_confirm_title" msgid="5255502723840197663">"Resetten?"</string>
+    <string name="reset_network_confirm_desc" msgid="7721698076856330212">"Alle netwerkinstellingen resetten? Je kunt deze actie niet ongedaan maken."</string>
+    <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"Instellingen resetten"</string>
+    <string name="reset_network_complete_toast" msgid="3804108209431416865">"Netwerkinstellingen zijn gereset"</string>
+    <string name="reset_app_pref_title" msgid="5855420038951743992">"App-voorkeuren resetten"</string>
+    <string name="reset_app_pref_desc" msgid="3356451885960078577">"Hiermee worden alle voorkeuren gereset voor:"</string>
+    <string name="reset_app_pref_items" msgid="5546867272168895443"><li>"Uitgeschakelde apps"</li>\n<li>"Uitgeschakelde app-meldingen"</li>\n<li>"Standaardapps voor acties"</li>\n<li>"Beperkingen voor achtergrondgegevens voor apps"</li>\n<li>"Beperkingen voor machtigingen"</li></string>
+    <string name="reset_app_pref_desc_data" msgid="9069623832516883414">"Je raakt geen app-gegevens kwijt."</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Apps resetten"</string>
+    <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"App-voorkeuren zijn gereset"</string>
     <string name="master_clear_title" msgid="8515335233363214414">"Alle gegevens wissen (fabrieksreset)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Datum en tijd"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"Datum en tijd instellen"</string>
@@ -198,11 +193,12 @@
     <string name="user_add_user_title" msgid="7458813670614932479">"Nieuwe gebruiker?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Wanneer je een nieuwe gebruiker toevoegt, moet die persoon zijn eigen profiel instellen."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Elke gebruiker kan apps updaten voor alle andere gebruikers"</string>
-    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
-    <skip />
-    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
-    <!-- no translation found for add_user_error_title (3206300411663817038) -->
-    <skip />
+    <string name="user_limit_reached_title" msgid="8803355734556061238">"Gebruikerslimiet bereikt"</string>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
+      <item quantity="other">Je kunt maximaal <xliff:g id="COUNT">%d</xliff:g> gebruikers toevoegen.</item>
+      <item quantity="one">Er kan maar één gebruiker worden gemaakt.</item>
+    </plurals>
+    <string name="add_user_error_title" msgid="3206300411663817038">"Kan geen nieuwe gebruiker maken"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"Gebruiker verwijderen"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"Gebruiker verwijderen?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"Alle apps en gegevens worden verwijderd."</string>
@@ -210,6 +206,7 @@
     <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Sluiten"</string>
     <string name="remove_user_error_retry" msgid="8291692909396995093">"Opnieuw proberen"</string>
     <string name="user_guest" msgid="3465399481257448601">"Gast"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"Gast"</string>
     <string name="user_switch" msgid="6544839750534690781">"Wijzigen"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Jij (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Naam"</string>
@@ -246,7 +243,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"Een schermvergrendeling instellen"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Je pincode kiezen"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Je patroon kiezen"</string>
-    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"Je wachtwoord kiezen"</string>
+    <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Je wachtwoord kiezen"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"Huidige schermvergrendeling"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Stel wachtwoord in voor beveiliging"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Wissen"</string>

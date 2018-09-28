@@ -96,29 +96,44 @@ public class UserGridRecyclerView extends PagedListView implements
 
     private List<UserRecord> createUserRecords(List<UserInfo> userInfoList) {
         List<UserRecord> userRecords = new ArrayList<>();
+
+        // If the foreground user CANNOT switch to other users, only display the foreground user.
+        if (!mCarUserManagerHelper.canForegroundUserSwitchUsers()) {
+            userRecords.add(createForegroundUserRecord());
+            return userRecords;
+        }
+
+        // If the foreground user CAN switch to other users, iterate through all users.
         for (UserInfo userInfo : userInfoList) {
-            if (userInfo.isGuest()) {
-                // Don't display guests in the switcher.
-                continue;
-            }
             boolean isForeground =
                     mCarUserManagerHelper.getCurrentForegroundUserId() == userInfo.id;
+
+            if (!isForeground && userInfo.isGuest()) {
+                // Don't display temporary running background guests in the switcher.
+                continue;
+            }
+
             UserRecord record = new UserRecord(userInfo, false /* isStartGuestSession */,
                     false /* isAddUser */, isForeground);
             userRecords.add(record);
         }
 
-        // Add guest user record if the foreground user is not a guest
+        // Add start guest user record if the system is not logged in as guest already.
         if (!mCarUserManagerHelper.isForegroundUserGuest()) {
-            userRecords.add(addGuestUserRecord());
+            userRecords.add(createStartGuestUserRecord());
         }
 
         // Add "add user" record if the foreground user can add users
         if (mCarUserManagerHelper.canForegroundUserAddUsers()) {
-            userRecords.add(addUserRecord());
+            userRecords.add(createAddUserRecord());
         }
 
         return userRecords;
+    }
+
+    private UserRecord createForegroundUserRecord() {
+        return new UserRecord(mCarUserManagerHelper.getCurrentForegroundUserInfo(),
+                false /* isStartGuestSession */, false /* isAddUser */, true /* isForeground */);
     }
 
     /**
@@ -140,9 +155,9 @@ public class UserGridRecyclerView extends PagedListView implements
     /**
      * Create guest user record
      */
-    private UserRecord addGuestUserRecord() {
+    private UserRecord createStartGuestUserRecord() {
         UserInfo userInfo = new UserInfo();
-        userInfo.name = mContext.getString(R.string.user_guest);
+        userInfo.name = mContext.getString(R.string.start_guest_session);
         return new UserRecord(userInfo, true /* isStartGuestSession */,
                 false /* isAddUser */, false /* isForeground */);
     }
@@ -150,7 +165,7 @@ public class UserGridRecyclerView extends PagedListView implements
     /**
      * Create add user record
      */
-    private UserRecord addUserRecord() {
+    private UserRecord createAddUserRecord() {
         UserInfo userInfo = new UserInfo();
         userInfo.name = mContext.getString(R.string.user_add_user_menu);
         return new UserRecord(userInfo, false /* isStartGuestSession */,
@@ -232,48 +247,40 @@ public class UserGridRecyclerView extends PagedListView implements
             holder.mUserAvatarImageView.setImageDrawable(circleIcon);
             holder.mUserNameTextView.setText(userRecord.mInfo.name);
 
-            // Show the current user frame if current user
+            // Defaults to 100% opacity and no circle around the icon.
+            holder.mView.setAlpha(mOpacityEnabled);
+            holder.mFrame.setBackgroundResource(0);
+
+            // Foreground user record.
             if (userRecord.mIsForeground) {
+                // Add a circle around the icon.
                 holder.mFrame.setBackgroundResource(R.drawable.car_user_avatar_bg_circle);
-            } else {
-                holder.mFrame.setBackgroundResource(0);
+                // Go back to quick settings if user selected is already the foreground user.
+                holder.mView.setOnClickListener(v -> mBaseFragment.getActivity().onBackPressed());
+                return;
             }
 
-            // If there are restrictions, show a 50% opaque "add user" view
-            if (userRecord.mIsAddUser && mIsAddUserRestricted) {
-                holder.mView.setAlpha(mOpacityDisabled);
-            } else {
-                holder.mView.setAlpha(mOpacityEnabled);
+            // Start guest session record.
+            if (userRecord.mIsStartGuestSession) {
+                holder.mView.setOnClickListener(v -> handleGuestSessionClicked());
+                return;
             }
 
-            holder.mView.setOnClickListener(v -> {
-                if (userRecord == null) {
-                    return;
+            // Add user record.
+            if (userRecord.mIsAddUser) {
+                if (mIsAddUserRestricted) {
+                    // If there are restrictions, show a 50% opaque "add user" view
+                    holder.mView.setAlpha(mOpacityDisabled);
+                    holder.mView.setOnClickListener(
+                            v -> mBaseFragment.getFragmentController().showDOBlockingMessage());
+                } else {
+                    holder.mView.setOnClickListener(v -> handleAddUserClicked(v));
                 }
+                return;
+            }
 
-                // If the user selects Guest, start the guest session.
-                if (userRecord.mIsStartGuestSession) {
-                    mCarUserManagerHelper.startNewGuestSession(mGuestName);
-                    return;
-                }
-
-                // If the user wants to add a user, show dialog to confirm adding a user
-                if (userRecord.mIsAddUser) {
-                    if (mIsAddUserRestricted) {
-                        mBaseFragment.getFragmentController().showDOBlockingMessage();
-                    } else {
-                        // Disable button so it cannot be clicked multiple times
-                        mAddUserView = holder.mView;
-                        mAddUserView.setEnabled(false);
-
-                        handleAddUserClicked();
-                    }
-                    return;
-                }
-                // If the user doesn't want to be a guest or add a user, switch to the user selected
-                mCarUserManagerHelper.switchToUser(userRecord.mInfo);
-            });
-
+            // User record;
+            holder.mView.setOnClickListener(v -> handleUserSwitch(userRecord.mInfo));
         }
 
         /**
@@ -286,22 +293,45 @@ public class UserGridRecyclerView extends PagedListView implements
             mIsAddUserRestricted = isAddUserRestricted;
         }
 
-        private void handleAddUserClicked() {
+        private void handleUserSwitch(UserInfo userInfo) {
+            if (mCarUserManagerHelper.switchToUser(userInfo)) {
+                // Successful switch, close Settings app.
+                mBaseFragment.getActivity().finish();
+            }
+        }
+
+        private void handleGuestSessionClicked() {
+            if (mCarUserManagerHelper.startNewGuestSession(mGuestName)) {
+                // Successful start, will switch to guest now. Close Settings app.
+                mBaseFragment.getActivity().finish();
+            }
+        }
+
+        private void handleAddUserClicked(View addUserView) {
             if (mCarUserManagerHelper.isUserLimitReached()) {
-                enableAddView();
-                // Display max user limit reached dialog.
-                MaxUsersLimitReachedDialog dialog = new MaxUsersLimitReachedDialog(
-                        mCarUserManagerHelper.getMaxSupportedRealUsers());
-                if (mBaseFragment != null) {
-                    dialog.show(mBaseFragment);
-                }
+                showMaxUsersLimitReachedDialog();
             } else {
-                ConfirmCreateNewUserDialog dialog = new ConfirmCreateNewUserDialog();
-                dialog.setConfirmCreateNewUserListener(this);
-                dialog.setCancelCreateNewUserListener(this);
-                if (mBaseFragment != null) {
-                    dialog.show(mBaseFragment);
-                }
+                mAddUserView = addUserView;
+                // Disable button so it cannot be clicked multiple times
+                mAddUserView.setEnabled(false);
+                showConfirmCreateNewUserDialog();
+            }
+        }
+
+        private void showMaxUsersLimitReachedDialog() {
+            MaxUsersLimitReachedDialog dialog = new MaxUsersLimitReachedDialog(
+                    mCarUserManagerHelper.getMaxSupportedRealUsers());
+            if (mBaseFragment != null) {
+                dialog.show(mBaseFragment);
+            }
+        }
+
+        private void showConfirmCreateNewUserDialog() {
+            ConfirmCreateNewUserDialog dialog = new ConfirmCreateNewUserDialog();
+            dialog.setConfirmCreateNewUserListener(this);
+            dialog.setCancelCreateNewUserListener(this);
+            if (mBaseFragment != null) {
+                dialog.show(mBaseFragment);
             }
         }
 
@@ -336,6 +366,8 @@ public class UserGridRecyclerView extends PagedListView implements
         @Override
         public void onUserAddedSuccess() {
             enableAddView();
+            // New user added. Will switch to new user, therefore close the app.
+            mBaseFragment.getActivity().finish();
         }
 
         @Override

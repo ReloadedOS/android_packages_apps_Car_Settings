@@ -33,6 +33,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.VisibleForTesting;
@@ -51,6 +52,8 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
 
     private static final String LOCK_OPTIONS_DIALOG_TAG = "lock_options_dialog_tag";
     private static final String FRAGMENT_TAG_SAVE_PASSWORD_WORKER = "save_password_worker";
+    private static final String STATE_UI_STAGE = "state_ui_stage";
+    private static final String STATE_FIRST_ENTRY = "state_first_entry";
     private static final Logger LOG = new Logger(ChooseLockPinPasswordFragment.class);
     private static final String EXTRA_IS_PIN = "extra_is_pin";
 
@@ -75,6 +78,7 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
     private Button mSecondaryButton;
     private Button mPrimaryButton;
     private EditText mPasswordField;
+    private ProgressBar mProgressBar;
 
     private TextChangedHandler mTextChangedHandler = new TextChangedHandler();
     private TextViewInputDisabler mPasswordEntryInputDisabler;
@@ -195,6 +199,11 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
         mIsAlphaMode = DevicePolicyManager.PASSWORD_QUALITY_ALPHABETIC == passwordQuality
                 || DevicePolicyManager.PASSWORD_QUALITY_ALPHANUMERIC == passwordQuality
                 || DevicePolicyManager.PASSWORD_QUALITY_COMPLEX == passwordQuality;
+
+        if (savedInstanceState != null) {
+            mUiStage = Stage.values()[savedInstanceState.getInt(STATE_UI_STAGE)];
+            mFirstEntry = savedInstanceState.getString(STATE_FIRST_ENTRY);
+        }
     }
 
     @Override
@@ -237,6 +246,7 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
         });
 
         mPasswordEntryInputDisabler = new TextViewInputDisabler(mPasswordField);
+        mProgressBar = (ProgressBar) getActivity().findViewById(R.id.progress_bar);
 
         mHintMessage = view.findViewById(R.id.hint_text);
 
@@ -290,6 +300,13 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
         if (mSavePasswordWorker != null) {
             mSavePasswordWorker.setListener(this::onChosenLockSaveFinished);
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(STATE_UI_STAGE, mUiStage.ordinal());
+        outState.putString(STATE_FIRST_ENTRY, mFirstEntry);
     }
 
     @Override
@@ -442,6 +459,7 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     void onChosenLockSaveFinished(boolean isSaveSuccessful) {
+        setProgressBarVisible(false);
         if (isSaveSuccessful) {
             onComplete();
         } else {
@@ -471,6 +489,7 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
         mSavePasswordWorker.start(mUserId, mCurrentEntry, mExistingPassword,
                 mPasswordHelper.getPasswordQuality());
 
+        setProgressBarVisible(true);
         updateSubmitButtonsState();
     }
 
@@ -515,6 +534,12 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
             setSecondaryButtonText(mUiStage.secondaryButtonText);
         }
         mPasswordEntryInputDisabler.setInputEnabled(inputAllowed);
+    }
+
+    private void setProgressBarVisible(boolean visible) {
+        if (mProgressBar != null) {
+            mProgressBar.setVisibility(visible ? View.VISIBLE : View.GONE);
+        }
     }
 
     /**

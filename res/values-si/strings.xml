@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="keywords_display_night_display" msgid="2922294576679769957">"අඳුරු තිරය, රාත්‍රිය, වර්ණ ගැන්වීම"</string>
     <string name="night_mode_tile_label" msgid="6603597795502131664">"රාත්‍රී ප්‍රකාරය"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi‑Fi"</string>
-    <string name="wifi_settings_summary" msgid="6095898149997291025">"නොරැහැන් ප්‍රවේශ ස්ථාන සකසන්න සහ කළමනාකරණය කරන්න"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Wi‑Fi ක්‍රියාත්මක කරමින්…"</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"Wi‑Fi ක්‍රියා විරහිත කරමින්…"</string>
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"ජාලය අමතක කිරීමට අසමත් විය"</string>
@@ -48,8 +47,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"සම්බන්ධතා වේගය"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"සංඛ්‍යාතය"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"IP ලිපිනය"</string>
-    <!-- no translation found for show_password (2074628020371139240) -->
-    <skip />
+    <string name="show_password" msgid="2074628020371139240">"මුරපදය පෙන්වන්න"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"දුර්වලයි"</item>
@@ -62,7 +60,6 @@
     <string name="bluetooth_settings" msgid="3878243366013638982">"බ්ලූටූත්"</string>
     <string name="bluetooth_disabled" msgid="4187409401590350572">"බ්ලූටූත් අබලයි"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"බ්ලූටූත්"</string>
-    <string name="bluetooth_settings_summary" msgid="4023303473646769835">"සබැඳුම් කළමනාකරණය කරන්න, උපාංගයේ නම සහ සොයා ගැනීමේ හැකියාව සකසන්න"</string>
     <string name="bluetooth_talkback_computer" msgid="5223330129934365312">"පරිගණකය"</string>
     <string name="bluetooth_talkback_headset" msgid="6155254514321149935">"හෙඩ්සෙටය"</string>
     <string name="bluetooth_talkback_phone" msgid="8833977851215000426">"දුරකථනය"</string>
@@ -142,7 +139,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"ප්‍රකාශන හිමිකම"</string>
     <string name="license_title" msgid="936705938435249965">"බලපත්‍රය"</string>
     <string name="terms_title" msgid="5201471373602628765">"නියම සහ කොන්දේසි"</string>
-    <string name="webview_license_title" msgid="2531829466541104826">"පද්ධති WebView බලපත"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"පද්ධති WebView බලපත්‍ර"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"වෝල්පේපර"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"චන්ද්‍රිකා රූප සපයන්නන්:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"තුන් වන පාර්ශ්ව බලපත්‍ර"</string>
@@ -151,21 +148,19 @@
     <string name="reset_options_title" msgid="4388902952861833420">"යළි පිහිටුවීමේ විකල්ප"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"ජාලය, යෙදුම්, හෝ උපාංගය යළි පිහිටුවීම"</string>
     <string name="reset_network_title" msgid="5571672360042035188">"Wi-Fi, බ්ලූටූත් යළි පිහිටුවන්න"</string>
-    <!-- no translation found for reset_network_desc (602381374544634925) -->
-    <skip />
-    <!-- no translation found for reset_network_items (560284503269666087) -->
-    <skip />
-    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
-    <skip />
-    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
-    <skip />
-    <string name="reset_app_preferences_title" msgid="1358092641530920263">"යෙදුම් මනාප යළි පිහිටුවන්න"</string>
+    <string name="reset_network_desc" msgid="602381374544634925">"මෙය පහත ඒවා ඇතුළුව, සියලු ජාල සැකසීම් යළි පිහිටුවනු ඇත:"</string>
+    <string name="reset_network_items" msgid="560284503269666087"><li>"Wi‑Fi"</li>\n<li>"බ්ලූටූත්"</li></string>
+    <string name="reset_network_button_text" msgid="8374174455632765033">"සැකසීම් යළි පිහිටුවන්න"</string>
+    <string name="reset_network_confirm_title" msgid="5255502723840197663">"යළි පිහිටුවන්න ද?"</string>
+    <string name="reset_network_confirm_desc" msgid="7721698076856330212">"සියලු ජාල සැකසීම් යළි පිහිටුවන්න ද? ඔබට මෙම ක්‍රියාව පසුගමනය කළ නොහැකිය!"</string>
+    <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"සැකසීම් යළි පිහිටුවන්න"</string>
+    <string name="reset_network_complete_toast" msgid="3804108209431416865">"ජාල සැකසීම් යළි පිහිටුවිණි"</string>
+    <string name="reset_app_pref_title" msgid="5855420038951743992">"යෙදුම් මනාප යළි පිහිටුවන්න"</string>
+    <string name="reset_app_pref_desc" msgid="3356451885960078577">"මෙමගින් මේ සඳහා සියලු මනාප යළි සැකසීම සිදු කෙරේ:"</string>
+    <string name="reset_app_pref_items" msgid="5546867272168895443"><li>"අබල කළ යෙදුම්"</li>\n<li>"අබල කළ යෙදුම් දැනුම් දීම්"</li>\n<li>"ක්‍රියා සඳහා පෙරනිමි යෙදුම්"</li>\n<li>"යෙදුම් සඳහා පසුතල දත්ත සීමා කිරීම්"</li>\n<li>"ඕනෑම අවසර සීමා කිරීම්"</li></string>
+    <string name="reset_app_pref_desc_data" msgid="9069623832516883414">"ඔබගේ යෙදුම් දත්ත් කිසිවක් නැතිවී නොයනු ඇත."</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"යෙදුම් යළි පිහිටුවන්න"</string>
+    <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"යෙදුම් මනාප යළි පිහිටුවා ඇත"</string>
     <string name="master_clear_title" msgid="8515335233363214414">"සියලු දත්ත මකන්න (කම්හල් යළි පිහිටුවීම)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"දිනය සහ වේලාව"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"දිනය සහ වේලාව සකසන්න"</string>
@@ -198,11 +193,12 @@
     <string name="user_add_user_title" msgid="7458813670614932479">"අලුත් පරිශීලක එක් කරනව ද?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"ඔබ අලුත් පරිශීලකයෙක් එක් කරන විට, එම පුද්ගලයාට තමන්ගේ ඉඩ සකසා ගැනීමට අවශ්‍ය වේ."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"සියලුම අනෙක් පරිශීලකයින් සඳහා ඕනෑම පරිශීලකයෙකුට යෙදුම් යාවත්කාලීන කළ හැක."</string>
-    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
-    <skip />
-    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
-    <!-- no translation found for add_user_error_title (3206300411663817038) -->
-    <skip />
+    <string name="user_limit_reached_title" msgid="8803355734556061238">"පරිශීලක සීමාවට ළඟා විය"</string>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
+      <item quantity="one">ඔබට පරිශීලකයින් <xliff:g id="COUNT">%d</xliff:g>ක් දක්වා එක් කළ හැකිය.</item>
+      <item quantity="other">ඔබට පරිශීලකයින් <xliff:g id="COUNT">%d</xliff:g>ක් දක්වා එක් කළ හැකිය.</item>
+    </plurals>
+    <string name="add_user_error_title" msgid="3206300411663817038">"නව පරිශීලකයෙකු සෑදීමට අසමත් විය"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"පරිශීලකයා මකන්න"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"මෙම පරිශීලක ඉවත් කරන්න ද?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"සියලුම යෙදුම් සහ දත්ත මකා දැමෙනු ඇත."</string>
@@ -210,6 +206,7 @@
     <string name="remove_user_error_dismiss" msgid="4006591159426844335">"අස් කරන්න"</string>
     <string name="remove_user_error_retry" msgid="8291692909396995093">"යළි උත්සාහ කරන්න"</string>
     <string name="user_guest" msgid="3465399481257448601">"අමුත්තා"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"අමුත්තා"</string>
     <string name="user_switch" msgid="6544839750534690781">"මාරු වෙන්න"</string>
     <string name="current_user_name" msgid="3813671533249316823">"ඔබ (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"නම‍"</string>
@@ -246,7 +243,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"තිර අගුලක් සකසන්න"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"ඔබගේ PIN තෝරන්න"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"ඔබේ රටාව තෝරා ගන්න"</string>
-    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"ඔබගේ මුරපදය තෝරන්න"</string>
+    <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"ඔබේ මුරපදය තෝරා ගන්න"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"වත්මන් තිර අගුල"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"ආරක්ෂාව සඳහා, රටාවක් සකසන්න"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"හිස් කරන්න"</string>

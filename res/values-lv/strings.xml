@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- * Copyright (c) 2017, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@
     <string name="keywords_display_night_display" msgid="2922294576679769957">"aptumšot ekrānu, nakts, tonējums"</string>
     <string name="night_mode_tile_label" msgid="6603597795502131664">"Nakts režīms"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi-Fi"</string>
-    <string name="wifi_settings_summary" msgid="6095898149997291025">"Iestatīt un pārvaldīt bezvadu piekļuves punktu"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Notiek Wi-Fi ieslēgšana…"</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"Notiek Wi-Fi izslēgšana…"</string>
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"Neizdevās aizmirst tīklu."</string>
@@ -48,8 +47,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"Saites izveides ātrums"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"Frekvence"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"IP adrese"</string>
-    <!-- no translation found for show_password (2074628020371139240) -->
-    <skip />
+    <string name="show_password" msgid="2074628020371139240">"Rādīt paroli"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
   <string-array name="wifi_signals">
     <item msgid="4897376984576812606">"Vājš"</item>
@@ -62,7 +60,6 @@
     <string name="bluetooth_settings" msgid="3878243366013638982">"Bluetooth"</string>
     <string name="bluetooth_disabled" msgid="4187409401590350572">"Bluetooth atspējots"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
-    <string name="bluetooth_settings_summary" msgid="4023303473646769835">"Pārvaldīt savienojumus, iestatīt ierīces nosaukumu un uztveramību"</string>
     <string name="bluetooth_talkback_computer" msgid="5223330129934365312">"Dators"</string>
     <string name="bluetooth_talkback_headset" msgid="6155254514321149935">"Austiņas"</string>
     <string name="bluetooth_talkback_phone" msgid="8833977851215000426">"Tālrunis"</string>
@@ -143,7 +140,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"Autortiesības"</string>
     <string name="license_title" msgid="936705938435249965">"Licence"</string>
     <string name="terms_title" msgid="5201471373602628765">"Pakalpojumu sniegšanas noteikumi"</string>
-    <string name="webview_license_title" msgid="2531829466541104826">"Sistēmas WebView licence"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"Sistēmas WebView licences"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"Fona tapetes"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"Satelītuzņēmumu nodrošinātāji:\n©2014 CNES/Astrium, DigitalGlobe, Bluesky"</string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"Trešo pušu licences"</string>
@@ -152,21 +149,19 @@
     <string name="reset_options_title" msgid="4388902952861833420">"Atiestatīšanas opcijas"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Tīkla, lietotņu vai ierīces atiestatīšana"</string>
     <string name="reset_network_title" msgid="5571672360042035188">"Atiestatīt Wi-Fi, Bluetooth"</string>
-    <!-- no translation found for reset_network_desc (602381374544634925) -->
-    <skip />
-    <!-- no translation found for reset_network_items (560284503269666087) -->
-    <skip />
-    <!-- no translation found for reset_network_button_text (8374174455632765033) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_title (5255502723840197663) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_desc (7721698076856330212) -->
-    <skip />
-    <!-- no translation found for reset_network_confirm_button_text (5246859685069024851) -->
-    <skip />
-    <!-- no translation found for reset_network_complete_toast (3804108209431416865) -->
-    <skip />
-    <string name="reset_app_preferences_title" msgid="1358092641530920263">"Atiestatīt lietotņu preferences"</string>
+    <string name="reset_network_desc" msgid="602381374544634925">"Tiks atiestatīti visi tīkla iestatījumu, tostarp tālāk norādītie iestatījumi."</string>
+    <string name="reset_network_items" msgid="560284503269666087"><li>"Wi‑Fi"</li>\n<li>"Bluetooth"</li></string>
+    <string name="reset_network_button_text" msgid="8374174455632765033">"Atiestatīt iestatījumus"</string>
+    <string name="reset_network_confirm_title" msgid="5255502723840197663">"Vai atiestatīt?"</string>
+    <string name="reset_network_confirm_desc" msgid="7721698076856330212">"Vai atiestatīt visus tīkla iestatījumus? Šo darbību nevarēs atsaukt."</string>
+    <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"Atiestatīt iestatījumus"</string>
+    <string name="reset_network_complete_toast" msgid="3804108209431416865">"Tīkla iestatījumi ir atiestatīti."</string>
+    <string name="reset_app_pref_title" msgid="5855420038951743992">"Atiestatīt lietotņu preferences"</string>
+    <string name="reset_app_pref_desc" msgid="3356451885960078577">"Tiks atiestatītas visas preferences saistībā ar tālāk minēto:"</string>
+    <string name="reset_app_pref_items" msgid="5546867272168895443"><li>"Atspējotās lietotnes"</li>\n<li>"Atspējoto lietotņu paziņojumi"</li>\n<li>"Noklusējuma lietojumprogrammas darbību veikšanai"</li>\n<li>"Fona datu ierobežojumi lietotnēm"</li>\n<li>"Jebkādi atļauju ierobežojumi"</li></string>
+    <string name="reset_app_pref_desc_data" msgid="9069623832516883414">"Jūs nezaudēsiet lietotņu datus."</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Atiestatīt lietotnes"</string>
+    <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"Lietotņu preferences ir atiestatītas"</string>
     <string name="master_clear_title" msgid="8515335233363214414">"Notīrīt visus datus (atiestatīt ierīci)"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Datums un laiks"</string>
     <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"Datuma un laika iestatīšana"</string>
@@ -199,11 +194,13 @@
     <string name="user_add_user_title" msgid="7458813670614932479">"Jauns lietotājs"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Kad pievienosiet jaunu lietotāju, viņam būs jāizveido savs profils."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Ikviens lietotājs var atjaunināt lietotnes citu lietotāju vietā."</string>
-    <!-- no translation found for user_limit_reached_title (8803355734556061238) -->
-    <skip />
-    <!-- no translation found for user_limit_reached_message (4809364467389495355) -->
-    <!-- no translation found for add_user_error_title (3206300411663817038) -->
-    <skip />
+    <string name="user_limit_reached_title" msgid="8803355734556061238">"Sasniegts lietotāju ierobežojums"</string>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
+      <item quantity="zero">Varat pievienot ne vairāk kā <xliff:g id="COUNT">%d</xliff:g> lietotājus.</item>
+      <item quantity="one">Varat pievienot ne vairāk kā <xliff:g id="COUNT">%d</xliff:g> lietotāju.</item>
+      <item quantity="other">Varat pievienot ne vairāk kā <xliff:g id="COUNT">%d</xliff:g> lietotājus.</item>
+    </plurals>
+    <string name="add_user_error_title" msgid="3206300411663817038">"Neizdevās izveidot jaunu lietotāju"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"Dzēst lietotāju"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"Vai noņemt šo lietotāju?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"Tiks dzēstas visas lietotnes un dati."</string>
@@ -211,6 +208,7 @@
     <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Aizvērt"</string>
     <string name="remove_user_error_retry" msgid="8291692909396995093">"Mēģināt vēlreiz"</string>
     <string name="user_guest" msgid="3465399481257448601">"Viesis"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"Viesis"</string>
     <string name="user_switch" msgid="6544839750534690781">"Pārslēgt"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Jūs (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Vārds"</string>
@@ -247,7 +245,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"Ekrāna bloķēšanas iestatīšana"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Izvēlieties PIN"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Kombinācijas izvēle"</string>
-    <string name="lockscreen_choose_your_password" msgid="5703747830308181428">"Izvēlieties paroli"</string>
+    <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Izvēlieties paroli"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"Pašreizējais ekrāna bloķēšanas veids"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Drošības nolūkos iestatiet kombināciju."</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Notīrīt"</string>

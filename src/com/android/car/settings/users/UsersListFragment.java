@@ -31,6 +31,7 @@ import androidx.car.widget.ListItemProvider;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.CarUxRestrictionsHelper;
+import com.android.car.settings.common.ErrorDialog;
 import com.android.car.settings.common.ListItemSettingsFragment;
 
 /**
@@ -66,18 +67,22 @@ public class UsersListFragment extends ListItemSettingsFragment
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         mOpacityDisabled = getContext().getResources().getFloat(R.dimen.opacity_disabled);
         mOpacityEnabled = getContext().getResources().getFloat(R.dimen.opacity_enabled);
         mCarUserManagerHelper = new CarUserManagerHelper(getContext());
-        mItemProvider =
-                new UsersItemProvider(getContext(), this, mCarUserManagerHelper);
+        mItemProvider = new UsersItemProvider.Builder(getContext(), mCarUserManagerHelper)
+                .setOnUserClickListener(this)
+                .setIncludeSupplementalIcon(true)
+                .create();
 
         // Register to receive changes to the users.
         mCarUserManagerHelper.registerOnUsersUpdateListener(this);
+    }
 
-        // Super class's onActivityCreated need to be called after itemProvider is initialized.
-        // Because getItemProvider is called in there.
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         mProgressBar = getActivity().findViewById(R.id.progress_bar);
@@ -171,8 +176,7 @@ public class UsersListFragment extends ListItemSettingsFragment
     public void onUserAddedFailure() {
         setAddUserEnabled(true);
         // Display failure dialog.
-        AddUserErrorDialog dialog = new AddUserErrorDialog();
-        dialog.show(this);
+        ErrorDialog.show(this, R.string.add_user_error_title);
     }
 
     private void setAddUserEnabled(boolean enabled) {

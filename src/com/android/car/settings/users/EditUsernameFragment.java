@@ -15,7 +15,7 @@
  */
 package com.android.car.settings.users;
 
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Intent;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
@@ -25,6 +25,9 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
@@ -49,13 +52,28 @@ public class EditUsernameFragment extends BaseFragment {
     public static EditUsernameFragment newInstance(UserInfo userInfo) {
         EditUsernameFragment
                 userSettingsFragment = new EditUsernameFragment();
-        Bundle bundle = BaseFragment.getBundle();
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
-        bundle.putInt(EXTRA_TITLE_ID, R.string.edit_user_name_title);
+        Bundle bundle = new Bundle();
         bundle.putParcelable(Intent.EXTRA_USER, userInfo);
-        bundle.putInt(EXTRA_LAYOUT, R.layout.edit_username_fragment);
         userSettingsFragment.setArguments(bundle);
         return userSettingsFragment;
+    }
+
+    @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_with_button;
+    }
+
+    @Override
+    @LayoutRes
+    protected int getLayoutId() {
+        return R.layout.edit_username_fragment;
+    }
+
+    @Override
+    @StringRes
+    protected int getTitleId() {
+        return R.string.edit_user_name_title;
     }
 
     @Override

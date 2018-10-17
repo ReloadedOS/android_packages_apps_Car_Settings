@@ -183,11 +183,15 @@
     <string name="time_picker_title" msgid="7436045944320504639">"वेळ"</string>
     <string name="user_admin" msgid="1535484812908584809">"प्रशासक"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"प्रशासक म्हणून साइन इन केले आहे"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"प्रशासक परवानग्या मंजूर करा"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"प्रशासक करा"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"वापरकर्ता इतर प्रशासकांसह वापरकर्त्यांना हटवू शकेल आणि सिस्टीम फॅक्टरी रीसेट करू शकेल."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"ही क्रिया परत उलट करता येणार नाही."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"होय, प्रशासक करा"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"वापरकर्ता जोडा"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"नवीन वापरकर्ता"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"नवीन वापरकर्ता जोडायचा?"</string>
@@ -320,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"सामान्यत: वापरले जाणारे पासवर्ड तुमच्या IT प्रशासनाने ब्लॉक केलेले आहेत. दुसरा एखादा पासवर्ड वापरून पहा."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"अंकांच्या चढत्या, उतरत्या किंवा पुनरावृत्त क्रमाला अनुमती नाही."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"स्क्रीन लॉक पर्याय"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> दिवसांपूर्वी"</string>
     <string name="forget" msgid="3971143908183848527">"विसरा"</string>
     <string name="delete_button" msgid="5840500432614610850">"हटवा"</string>
     <string name="remove_button" msgid="6664656962868194178">"काढा"</string>
@@ -330,8 +335,8 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"डेमो मोडमधून बाहेर पडा"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"हे डेमो खाते हटवेल आणि फॅक्टरी डेटा सिस्टम रीसेट करेल. सर्व वापरकर्ता डेटा गमावेल."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"डेमो मोडमधून बाहेर पडा"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"सेटअप समाप्त करा"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"आता नाही"</string>
+    <!-- no translation found for suggestion_dismiss_button (4539412646977050641) -->
+    <skip />
     <string name="restricted_while_driving" msgid="6217369093121968299">"ड्राइव्ह करताना वैशिष्ट्य उपलब्ध नाही."</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"ड्राइव्ह करत असताना वापरकर्त्याला जोडू शकत नाही."</string>
 </resources>

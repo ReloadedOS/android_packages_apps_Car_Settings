@@ -17,7 +17,7 @@
 package com.android.car.settings.users;
 
 import android.car.drivingstate.CarUxRestrictions;
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Intent;
 import android.content.pm.UserInfo;
 import android.os.AsyncTask;
@@ -26,7 +26,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
 import androidx.car.widget.ListItemProvider;
 
 import com.android.car.settings.R;
@@ -57,13 +58,16 @@ public class UsersListFragment extends ListItemSettingsFragment
     private float mOpacityEnabled;
     private boolean mRestricted;
 
-    public static UsersListFragment newInstance() {
-        UsersListFragment usersListFragment = new UsersListFragment();
-        Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.users_list_title);
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
-        usersListFragment.setArguments(bundle);
-        return usersListFragment;
+    @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_with_button;
+    }
+
+    @Override
+    @StringRes
+    protected int getTitleId() {
+        return R.string.users_list_title;
     }
 
     @Override
@@ -90,7 +94,7 @@ public class UsersListFragment extends ListItemSettingsFragment
         mAddUserButton = (Button) getActivity().findViewById(R.id.action_button1);
         mAddUserButton.setOnClickListener(v -> {
             if (mRestricted) {
-                UsersListFragment.this.getFragmentController().showDOBlockingMessage();
+                getFragmentController().showBlockingMessage();
             } else {
                 handleAddUserClicked();
             }
@@ -103,8 +107,16 @@ public class UsersListFragment extends ListItemSettingsFragment
     }
 
     @Override
-    public void onUxRestrictionChanged(@NonNull CarUxRestrictions carUxRestrictions) {
-        mRestricted = CarUxRestrictionsHelper.isNoSetup(carUxRestrictions);
+    public void onResume() {
+        super.onResume();
+
+        // Make sure user list is refreshed.
+        onUsersUpdate();
+    }
+
+    @Override
+    public void onUxRestrictionsChanged(CarUxRestrictions restrictionInfo) {
+        mRestricted = CarUxRestrictionsHelper.isNoSetup(restrictionInfo);
         mAddUserButton.setAlpha(mRestricted ? mOpacityDisabled : mOpacityEnabled);
     }
 

@@ -16,13 +16,15 @@
 
 package com.android.car.settings.users;
 
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Intent;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
 import androidx.car.widget.ListItemProvider;
 
@@ -44,12 +46,11 @@ import static java.util.Objects.requireNonNull;
 public class ChooseNewAdminFragment extends ListItemSettingsFragment
         implements CarUserManagerHelper.OnUsersUpdateListener,
         UsersItemProvider.UserClickListener {
-    private static final String CONFIRM_ASSIGN_ADMIN_DIALOG_TAG = "ConfirmAssignAdminDialog";
+    private static final String CONFIRM_GRANT_ADMIN_DIALOG_TAG = "ConfirmGrantAdminDialog";
 
     private UsersItemProvider mItemProvider;
     private CarUserManagerHelper mCarUserManagerHelper;
     private UserInfo mAdminInfo;
-    private UserInfo mUserToMakeAdmin;
 
     /**
      * Creates a new instance of {@link ChooseNewAdminFragment} that enables the last remaining
@@ -59,12 +60,22 @@ public class ChooseNewAdminFragment extends ListItemSettingsFragment
      */
     public static ChooseNewAdminFragment newInstance(UserInfo adminInfo) {
         ChooseNewAdminFragment usersListFragment = new ChooseNewAdminFragment();
-        Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.choose_new_admin_label);
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
+        Bundle bundle = new Bundle();
         bundle.putParcelable(Intent.EXTRA_USER, adminInfo);
         usersListFragment.setArguments(bundle);
         return usersListFragment;
+    }
+
+    @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_with_button;
+    }
+
+    @Override
+    @StringRes
+    protected int getTitleId() {
+        return R.string.choose_new_admin_label;
     }
 
     @Override
@@ -109,15 +120,15 @@ public class ChooseNewAdminFragment extends ListItemSettingsFragment
 
     @Override
     public void onUserClicked(final UserInfo userToMakeAdmin) {
-        ConfirmAssignAdminPrivilegesDialog dialog = new ConfirmAssignAdminPrivilegesDialog();
-        dialog.setConfirmAssignAdminListener(
+        ConfirmGrantAdminPermissionsDialog dialog = new ConfirmGrantAdminPermissionsDialog();
+        dialog.setConfirmGrantAdminListener(
                 () -> assignNewAdminAndRemoveOldAdmin(userToMakeAdmin));
-        dialog.show(getFragmentManager(), CONFIRM_ASSIGN_ADMIN_DIALOG_TAG);
+        dialog.show(getFragmentManager(), CONFIRM_GRANT_ADMIN_DIALOG_TAG);
     }
 
     @VisibleForTesting
     void assignNewAdminAndRemoveOldAdmin(UserInfo userToMakeAdmin) {
-        mCarUserManagerHelper.assignAdminPrivileges(userToMakeAdmin);
+        mCarUserManagerHelper.grantAdminPermissions(userToMakeAdmin);
 
         requireActivity().onBackPressed();
         removeOldAdmin();

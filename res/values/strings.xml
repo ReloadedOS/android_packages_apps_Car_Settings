@@ -385,16 +385,35 @@
     <string name="user_admin">Admin</string>
     <!-- User summary to be displayed next to the currently logged-in user if they are also an admin. [CHAR LIMIT=35] -->
     <string name="signed_in_admin_user">Signed in as admin</string>
-    <!-- Description for button that assigns a user additional Admin privileges. [CHAR LIMIT=50]-->
-    <string name="grant_admin_privileges">Grant Admin permissions</string>
-    <!-- Button title for assigning admin privileges to a user [CHAR LIMIT=35]-->
-    <string name="assign_admin_privileges">Make Admin</string>
+    <!-- Title for the dialog that grants the user admin permissions. [CHAR LIMIT=50]-->
+    <string name="grant_admin_permissions_title">Grant Admin permissions</string>
+    <!-- Button text for granting admin permissions to a user [CHAR LIMIT=35]-->
+    <string name="grant_admin_permissions_button_text">Make Admin</string>
     <!-- Message to inform the user of what will happen when another user is upgraded to Admin status. [CHAR LIMIT=NONE]-->
-    <string name="assign_admin_privileges_message">The user will be able to delete users, including other Admins, and factory reset the system.</string>
-    <!-- Message to inform the user that assigning admin privileges to another user is not reversible. [CHAR LIMIT=100]-->
+    <string name="grant_admin_permissions_message">The user will be able to delete users, including other Admins, and factory reset the system.</string>
+    <!-- Message to inform the user that granting admin permissions to another user is not reversible. [CHAR LIMIT=100]-->
     <string name="action_not_reversible_message">This action is not reversible.</string>
-    <!-- Button text to confirm assigning admin privileges to another user. [CHAR LIMIT=40]-->
-    <string name="confirm_assign_admin">Yes, make admin</string>
+    <!-- Button text to confirm granting admin permissions to another user. [CHAR LIMIT=40]-->
+    <string name="confirm_grant_admin">Yes, make admin</string>
+
+    <!-- User Restrictions -->
+    <!-- Creating Users -->
+    <!-- Title for toggle that controls whether a user is able to create other users [CHAR LIMIT=35] -->
+    <string name="create_user_permission_title" translatable="false">Create Users</string>
+    <!-- Description for the toggle that controls whether a user is able to create other users [CHAR LIMIT=50]-->
+    <string name="create_user_permission_body" translatable="false">Ability to add users</string>
+
+    <!-- Outgoing Calls -->
+    <!-- Title for toggle that controls whether a user is able to make outgoing calls [CHAR LIMIT=35] -->
+    <string name="outgoing_calls_permission_title" translatable="false">Phone Calls</string>
+    <!-- Description for the toggle that controls whether a user is able to make outgoing calls [CHAR LIMIT=50]-->
+    <string name="outgoing_calls_permission_body" translatable="false">All calls allowed</string>
+
+    <!-- SMS Messaging -->
+    <!-- Title for toggle that controls whether a user is able to send and receive sms messages [CHAR LIMIT=35] -->
+    <string name="sms_messaging_permission_title" translatable="false">Messaging</string>
+    <!-- Description for the toggle that controls whether a user is able to send and receive sms messages [CHAR LIMIT=50]-->
+    <string name="sms_messaging_permission_body" translatable="false">Allow messaging through vehicle mobile data</string>
 
     <!-- Adding new users -->
     <!-- User settings add user menu [CHAR LIMIT=35] -->
@@ -714,10 +733,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text">Exit Demo</string>
 
     <!-- String values for settings suggestions. -->
-    <!-- Button that allows users to re-open the setup wizard (changed to all caps so case doesn't matter) [CHAR_LIMIT=30] -->
-    <string name="suggestion_primary_button">finish setup</string>
-    <!-- Button that dismisses the suggestion to finish setting up their device (changed to all caps so case doesn't matter) [CHAR_LIMIT=30] -->
-    <string name="suggestion_secondary_button">not now</string>
+    <!-- Button that dismisses the suggestion to finish setting up their device [CHAR_LIMIT=30] -->
+    <string name="suggestion_dismiss_button">DISMISS</string>
 
     <!-- Warn user that the action they are trying to perform is blocked while the car is in
          motion [CHAR LIMIT=60] -->

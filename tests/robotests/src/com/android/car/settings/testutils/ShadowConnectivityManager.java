@@ -16,33 +16,28 @@
 
 package com.android.car.settings.testutils;
 
-import android.os.PowerManager;
+import android.net.ConnectivityManager;
 
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 import org.robolectric.annotation.Resetter;
 
-@Implements(PowerManager.class)
-public class ShadowPowerManager {
+@Implements(ConnectivityManager.class)
+public class ShadowConnectivityManager extends org.robolectric.shadows.ShadowConnectivityManager {
 
-    private static PowerManager sInstance;
+    private static int sResetCalledCount = 0;
 
-    public static void setInstance(PowerManager powerManager) {
-        sInstance = powerManager;
+    public static boolean verifyFactoryResetCalled(int numTimes) {
+        return sResetCalledCount == numTimes;
+    }
+
+    @Implementation
+    protected void factoryReset() {
+        sResetCalledCount++;
     }
 
     @Resetter
     public static void reset() {
-        sInstance = null;
-    }
-
-    @Implementation
-    public int getMinimumScreenBrightnessSetting() {
-        return sInstance.getMinimumScreenBrightnessSetting();
-    }
-
-    @Implementation
-    public int getMaximumScreenBrightnessSetting() {
-        return sInstance.getMaximumScreenBrightnessSetting();
+        sResetCalledCount = 0;
     }
 }

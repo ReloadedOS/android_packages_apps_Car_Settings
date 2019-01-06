@@ -75,6 +75,17 @@ public abstract class UsersBasePreferenceController extends NoSetupPreferenceCon
         mCarUserManagerHelper.unregisterOnUsersUpdateListener(mOnUsersUpdateListener);
     }
 
+    /**
+     * Refresh the screen on start (updateState is called onStart()). This is required since
+     * granting admin permissions does not trigger an update to the car user manager helper
+     * listener.
+     */
+    @Override
+    public void updateState(Preference preference) {
+        super.updateState(preference);
+        refreshUsers();
+    }
+
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
@@ -97,6 +108,11 @@ public abstract class UsersBasePreferenceController extends NoSetupPreferenceCon
 
             mShouldRefreshUsers = false;
         }
+    }
+
+    /** Gets the car user manager helper. */
+    protected CarUserManagerHelper getCarUserManagerHelper() {
+        return mCarUserManagerHelper;
     }
 
     /** Handles the user click on a preference for a certain user. */

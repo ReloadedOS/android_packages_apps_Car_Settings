@@ -16,9 +16,8 @@
 
 package com.android.car.settings.common;
 
-import static com.google.common.truth.Truth.assertThat;
-
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 import android.content.Context;
@@ -44,10 +43,10 @@ public class ButtonPreferenceTest {
 
     @Before
     public void setUp() {
-        final Context context = RuntimeEnvironment.application;
-        final Context themedContext = new ContextThemeWrapper(context, R.style.CarSettingTheme);
+        Context context = RuntimeEnvironment.application;
+        Context themedContext = new ContextThemeWrapper(context, R.style.CarSettingTheme);
 
-        View rootView = View.inflate(themedContext, R.layout.button_preference, null);
+        View rootView = View.inflate(themedContext, R.layout.two_action_preference, null);
         mViewHolder = PreferenceViewHolder.createInstanceForTests(rootView);
         mButtonPreference = new ButtonPreference(context);
     }
@@ -58,28 +57,30 @@ public class ButtonPreferenceTest {
         OnButtonClickListener listener = mock(OnButtonClickListener.class);
         mButtonPreference.setOnButtonClickListener(listener);
 
-        mViewHolder.findViewById(R.id.button_preference_button).performClick();
+        mViewHolder.findViewById(android.R.id.widget_frame).performClick();
 
         verify(listener).onButtonClick(mButtonPreference);
     }
 
     @Test
-    public void showButton_true_buttonVisible() {
-        mButtonPreference.showButton(true);
-        mButtonPreference.onBindViewHolder(mViewHolder);
+    public void performButtonClick_listenerSetAndButtonVisible_listenerFired() {
+        ButtonPreference.OnButtonClickListener listener = mock(
+                ButtonPreference.OnButtonClickListener.class);
+        mButtonPreference.setOnButtonClickListener(listener);
+        mButtonPreference.showAction(true);
 
-        assertThat(
-                mViewHolder.findViewById(R.id.button_preference_button).getVisibility()).isEqualTo(
-                View.VISIBLE);
+        mButtonPreference.performButtonClick();
+        verify(listener).onButtonClick(mButtonPreference);
     }
 
     @Test
-    public void showButton_false_buttonGone() {
-        mButtonPreference.showButton(false);
-        mButtonPreference.onBindViewHolder(mViewHolder);
+    public void performButtonClick_listenerSetAndButtonInvisible_listenerNotFired() {
+        ButtonPreference.OnButtonClickListener listener = mock(
+                ButtonPreference.OnButtonClickListener.class);
+        mButtonPreference.setOnButtonClickListener(listener);
+        mButtonPreference.showAction(false);
 
-        assertThat(
-                mViewHolder.findViewById(R.id.button_preference_button).getVisibility()).isEqualTo(
-                View.GONE);
+        mButtonPreference.performButtonClick();
+        verify(listener, never()).onButtonClick(mButtonPreference);
     }
 }

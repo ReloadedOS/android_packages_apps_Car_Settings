@@ -27,7 +27,6 @@ import com.android.car.settings.testutils.BaseTestActivity;
 import com.android.car.settings.testutils.DialogTestUtils;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -39,7 +38,7 @@ import org.robolectric.Robolectric;
  */
 @RunWith(CarSettingsRobolectricTestRunner.class)
 public class ConfirmGrantAdminPermissionsDialogTest {
-    private static final String CONFIRM_GRANT_ADMIN_DIALOG_TAG = "ConfirmGrantAdminDialog";
+
     private BaseTestActivity mTestActivity;
 
     @Before
@@ -49,7 +48,6 @@ public class ConfirmGrantAdminPermissionsDialogTest {
         mTestActivity = Robolectric.setupActivity(BaseTestActivity.class);
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
     public void testConfirmGrantAdminInvokesOnGrantAdminConfirmed() {
         UserInfo testUser = new UserInfo();
@@ -57,17 +55,17 @@ public class ConfirmGrantAdminPermissionsDialogTest {
 
         ConfirmGrantAdminPermissionsDialog.ConfirmGrantAdminListener listener =
                 Mockito.mock(ConfirmGrantAdminPermissionsDialog.ConfirmGrantAdminListener.class);
+        dialog.setUserToMakeAdmin(testUser);
         dialog.setConfirmGrantAdminListener(listener);
         showDialog(dialog);
 
         // Invoke confirm grant admin.
         DialogTestUtils.clickPositiveButton(dialog);
 
-        verify(listener).onGrantAdminPermissionsConfirmed();
+        verify(listener).onGrantAdminPermissionsConfirmed(testUser);
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
     public void testCancelDismissesDialog() {
         ConfirmGrantAdminPermissionsDialog dialog = new ConfirmGrantAdminPermissionsDialog();
@@ -81,7 +79,6 @@ public class ConfirmGrantAdminPermissionsDialogTest {
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
     public void testNoClickListenerDismissesDialog() {
         ConfirmGrantAdminPermissionsDialog dialog = new ConfirmGrantAdminPermissionsDialog();
@@ -94,11 +91,12 @@ public class ConfirmGrantAdminPermissionsDialogTest {
     }
 
     private void showDialog(ConfirmGrantAdminPermissionsDialog dialog) {
-        dialog.show(mTestActivity.getSupportFragmentManager(), CONFIRM_GRANT_ADMIN_DIALOG_TAG);
+        dialog.show(mTestActivity.getSupportFragmentManager(),
+                ConfirmGrantAdminPermissionsDialog.TAG);
     }
 
     private boolean isDialogShown() {
         return mTestActivity.getSupportFragmentManager()
-                .findFragmentByTag(CONFIRM_GRANT_ADMIN_DIALOG_TAG) != null;
+                .findFragmentByTag(ConfirmGrantAdminPermissionsDialog.TAG) != null;
     }
 }

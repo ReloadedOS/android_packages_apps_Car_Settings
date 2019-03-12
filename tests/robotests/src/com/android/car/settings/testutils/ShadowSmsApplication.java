@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,35 +16,32 @@
 
 package com.android.car.settings.testutils;
 
-import com.android.internal.widget.LockPatternUtils;
+import android.content.ComponentName;
+import android.content.Context;
+
+import com.android.internal.telephony.SmsApplication;
 
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 import org.robolectric.annotation.Resetter;
 
-@Implements(LockPatternUtils.class)
-public class ShadowLockPatternUtils {
+@Implements(SmsApplication.class)
+public class ShadowSmsApplication {
 
-    private static LockPatternUtils sInstance;
-
-    public static void setInstance(LockPatternUtils lockPatternUtils) {
-        sInstance = lockPatternUtils;
-    }
+    private static ComponentName sDefaultSmsApplication;
 
     @Resetter
     public static void reset() {
-        sInstance = null;
+        sDefaultSmsApplication = null;
     }
 
     @Implementation
-    protected void clearLock(String savedCredential, int userHandle) {
-        byte[] savedCredentialBytes = savedCredential != null
-                ? savedCredential.getBytes() : null;
-        sInstance.clearLock(savedCredentialBytes, userHandle);
+    protected static ComponentName getDefaultSmsApplication(
+            Context context, boolean updateIfNeeded) {
+        return sDefaultSmsApplication;
     }
 
-    @Implementation
-    protected int getKeyguardStoredPasswordQuality(int userHandle) {
-        return sInstance.getKeyguardStoredPasswordQuality(userHandle);
+    public static void setDefaultSmsApplication(ComponentName defaultSmsApplication) {
+        sDefaultSmsApplication = defaultSmsApplication;
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,35 +16,29 @@
 
 package com.android.car.settings.testutils;
 
-import com.android.internal.widget.LockPatternUtils;
+import android.content.Context;
+import android.telecom.DefaultDialerManager;
 
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 import org.robolectric.annotation.Resetter;
 
-@Implements(LockPatternUtils.class)
-public class ShadowLockPatternUtils {
+@Implements(DefaultDialerManager.class)
+public class ShadowDefaultDialerManager {
 
-    private static LockPatternUtils sInstance;
-
-    public static void setInstance(LockPatternUtils lockPatternUtils) {
-        sInstance = lockPatternUtils;
-    }
+    private static String sDefaultDialerPackage;
 
     @Resetter
     public static void reset() {
-        sInstance = null;
+        sDefaultDialerPackage = null;
     }
 
     @Implementation
-    protected void clearLock(String savedCredential, int userHandle) {
-        byte[] savedCredentialBytes = savedCredential != null
-                ? savedCredential.getBytes() : null;
-        sInstance.clearLock(savedCredentialBytes, userHandle);
+    protected static String getDefaultDialerApplication(Context context) {
+        return sDefaultDialerPackage;
     }
 
-    @Implementation
-    protected int getKeyguardStoredPasswordQuality(int userHandle) {
-        return sInstance.getKeyguardStoredPasswordQuality(userHandle);
+    public static void setDefaultDialerApplication(String defaultDialerPackage) {
+        sDefaultDialerPackage = defaultDialerPackage;
     }
 }

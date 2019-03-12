@@ -15,11 +15,10 @@
     limitations under the License.
 -->
 
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/assist_app_settings">
-    <com.android.car.settings.common.LogicalPreferenceGroup
-        android:key="@string/pk_default_assist_and_voice_options"
-        settings:controller="com.android.car.settings.applications.defaultapps.DefaultAssistantPickerPreferenceController"/>
-</PreferenceScreen>
+<resources>
+    <!-- Setup Wizard Security Values -->
+    <dimen name="suw_pin_pad_key_width">120dp</dimen>
+    <dimen name="suw_pin_pad_key_height">80dp</dimen>
+    <dimen name="suw_pin_pad_key_margin">80dp</dimen>
+    <dimen name="suw_lock_screen_margin">@*android:dimen/car_margin</dimen>
+</resources>

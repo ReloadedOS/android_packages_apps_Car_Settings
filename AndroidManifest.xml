@@ -17,11 +17,11 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.car.settings"
-    coreApp="true"
-    android:sharedUserId="android.uid.system"
-    android:versionCode="1"
-    android:versionName="1.0">
+          package="com.android.car.settings"
+          coreApp="true"
+          android:sharedUserId="android.uid.system"
+          android:versionCode="1"
+          android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -185,6 +185,11 @@
             </intent-filter>
 
             <intent-filter android:priority="100">
+                <action android:name="android.settings.MANAGE_DOMAIN_URLS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter android:priority="100">
                 <action android:name="android.settings.DATA_USAGE_SETTINGS" />
                 <action android:name="android.settings.MOBILE_DATA_USAGE" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -199,6 +204,17 @@
             <intent-filter android:priority="100">
                 <action android:name="android.settings.DATA_ROAMING_SETTINGS" />
                 <action android:name="android.settings.NETWORK_OPERATOR_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter android:priority="100">
+                <action android:name="android.settings.CHANNEL_NOTIFICATION_SETTINGS" />
+                <action android:name="android.settings.APP_NOTIFICATION_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter android:priority="100">
+                <action android:name="android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
@@ -258,9 +274,29 @@
                   android:windowSoftInputMode="adjustResize">
         </activity>
 
-        <activity android:name=".system.ThirdPartyLicensesActivity"
+        <activity android:name=".security.AddTrustedDeviceActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
                   android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity android:name=".system.ThirdPartyLicensesActivity"
+                  android:label="@string/settings_license_activity_title"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.settings.THIRD_PARTY_LICENSE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".system.RegulatoryInfoDisplayActivity"
+            android:label="@string/regulatory_labels"
+            android:enabled="@bool/config_show_regulatory_info">
+            <intent-filter>
+                <action android:name="android.settings.SHOW_REGULATORY_INFO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <!-- This logic is copied from phone.-->
